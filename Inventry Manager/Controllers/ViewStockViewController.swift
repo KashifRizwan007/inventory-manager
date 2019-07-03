@@ -17,11 +17,18 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
     var refreshControl = UIRefreshControl()
     var data = [[String:Any]]()
     private var msg = "Loading..."
+    var productData = [String:Any]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.slideMenu()
         self.loadData()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 108
         tableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
@@ -84,26 +91,27 @@ extension ViewStockViewController{
         })
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 180
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        productData = data[indexPath.row]
+        self.performSegue(withIdentifier: "productDetail", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "productDetail"{
+            let viewStockDetail = segue.destination as? VewStockDetailsViewController
+            viewStockDetail?.stock = self.productData
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! ViewStockTableViewCell
         cell.name.text = (data[indexPath.row]["name"] as! String)
-        cell.manufacturer.text = (data[indexPath.row]["manufacture"] as! String)
-        cell.quantity.text = String((data[indexPath.row]["quantity"] as! Int))
-        cell.price.text = String((data[indexPath.row]["amount"] as! Int))
-        cell.date.text = (data[indexPath.row]["date"] as! String)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

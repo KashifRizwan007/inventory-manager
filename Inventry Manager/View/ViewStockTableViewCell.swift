@@ -10,12 +10,7 @@ import UIKit
 
 class ViewStockTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var manufacturer: UILabel!
-    @IBOutlet weak var quantity: UILabel!
-    @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var date: UILabel!
-    
+    @IBOutlet weak var name: UILabel!    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

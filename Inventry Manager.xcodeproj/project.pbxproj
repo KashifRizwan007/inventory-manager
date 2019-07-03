@@ -25,6 +25,7 @@
 		125D4ADC22C4D6A5003F87EF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4ADB22C4D6A5003F87EF /* AppData.swift */; };
 		125D4AE122C4E9D8003F87EF /* RestAPILinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4AE022C4E9D8003F87EF /* RestAPILinks.swift */; };
 		125D4AE322C4F2AA003F87EF /* textFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4AE222C4F2AA003F87EF /* textFieldDesign.swift */; };
+		1264655022CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1264654F22CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift */; };
 		1276420022C38CCB0085B177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127641FF22C38CCB0085B177 /* AppDelegate.swift */; };
 		1276420222C38CCB0085B177 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276420122C38CCB0085B177 /* DashBoardViewController.swift */; };
 		1276420522C38CCB0085B177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1276420322C38CCB0085B177 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		125D4ADB22C4D6A5003F87EF /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		125D4AE022C4E9D8003F87EF /* RestAPILinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPILinks.swift; sourceTree = "<group>"; };
 		125D4AE222C4F2AA003F87EF /* textFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldDesign.swift; sourceTree = "<group>"; };
+		1264654F22CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VewStockDetailsViewController.swift; sourceTree = "<group>"; };
 		127641FC22C38CCB0085B177 /* Inventry Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inventry Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		127641FF22C38CCB0085B177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1276420122C38CCB0085B177 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
@@ -165,9 +167,10 @@
 				1276420122C38CCB0085B177 /* DashBoardViewController.swift */,
 				125D4ACB22C4B2D5003F87EF /* AddStoreViewController.swift */,
 				125D4ACD22C4B30C003F87EF /* AddProductViewController.swift */,
+				125D4AD322C4BABB003F87EF /* ViewStockViewController.swift */,
+				1264654F22CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift */,
 				125D4ACF22C4BA85003F87EF /* AddSalesDetailViewController.swift */,
 				125D4AD122C4BAAB003F87EF /* ViewStoreViewController.swift */,
-				125D4AD322C4BABB003F87EF /* ViewStockViewController.swift */,
 				125D4AD522C4BACF003F87EF /* ViewSalesViewController.swift */,
 				1276421B22C3B2070085B177 /* TableViewController.swift */,
 				125D4AD722C4C45B003F87EF /* LoginViewController.swift */,
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				125D4ACC22C4B2D5003F87EF /* AddStoreViewController.swift in Sources */,
+				1264655022CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift in Sources */,
 				1239CCF522CB8B4400737DA3 /* ViewStockTableViewCell.swift in Sources */,
 				125D4AD022C4BA85003F87EF /* AddSalesDetailViewController.swift in Sources */,
 				125D4AD622C4BACF003F87EF /* ViewSalesViewController.swift in Sources */,
