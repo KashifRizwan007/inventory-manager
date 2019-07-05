@@ -12,6 +12,8 @@ import Alamofire
 class login{
     var email:String
     var password:String
+    var User:user?
+    
     init(email:String, password:String) {
         self.email = email
         self.password = password
@@ -28,13 +30,24 @@ class login{
                     completionHandler(err)
                 }else{
                     let data = temp["data"] as! [String:Any]
-                    var userInfo = data["user"] as! [String:Any]
-                    staticLinker.currentUser.role = (userInfo["Role"] as! Bool)
-                    staticLinker.currentUser.email = (userInfo["email"] as! String)
-                    staticLinker.currentUser.id = (userInfo["id"] as! Int)
-                    staticLinker.currentUser.name = (userInfo["name"] as! String)
-                    staticLinker.currentUser.password = self.password
-                    staticLinker.currentUser.token = (data["token"] as! String)
+                    var userData = data["user"] as! [String:Any]
+                    
+                    let jsonData = try! JSONSerialization.data(withJSONObject: userData, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    
+                    let decoder = JSONDecoder()
+                    
+                    print("For USER: \(userData)")
+                    do
+                    {
+                        self.User = try decoder.decode(User.self, from: jsonData)
+                        print("\n\(self.User!.role!) ----- \(self.User!.name!) ----- \(self.User!.email!)")
+                        staticLinker.currentUser = self.User
+                    }
+                    catch
+                    {
+                        completionHandler(error.localizedDescription)
+                        print(error.localizedDescription)
+                    }
                     completionHandler("")
                 }
             }

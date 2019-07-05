@@ -30,7 +30,7 @@ class Product{
                 if error != ""{
                     completionHandler(error,nil)
                 }else{
-                    self.addProductExt(productName : self.name, manufacturer: self.manufacture, description: self.description, amount: self.amount, quantity: self.quantity, date: self.date, completionHandler: {(error,message) in
+                    self.addProductExt(productName : self.name, manufacturer: self.manufacture, description: self.description, amount: Int(self.amount), quantity: Int(self.quantity), date: self.date, completionHandler: {(error,message) in
                         completionHandler(error,message)
                     })
                 }
@@ -39,7 +39,9 @@ class Product{
     )}
     
     private func addProductExt(productName:String, manufacturer:String, description:String, amount:Int, quantity:Int, date:String, completionHandler: @escaping (_ error: String?, _ message:String?) -> ()){
-        AF.request(staticLinker.link.addStores, method: .post, parameters: ["name":productName,"manufacture":manufacturer,"description":description,"amount":amount,"quantity":quantity,"date":date], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json","token":staticLinker.currentUser.token]).responseJSON(completionHandler: {(response) in
+        AF.request(staticLinker.link.addProducts, method: .post,
+                   parameters: ["name":name,"manufacture":manufacturer,"description":description,"amount":amount,"quantity":quantity,"date":date],
+                   encoding: JSONEncoding.default, headers: ["Content-Type":"application/json","token":staticLinker.currentUser.token]).responseJSON(completionHandler: {(response) in
             if let error = response.error{
                 let err = error.localizedDescription
                 completionHandler(err,nil)
@@ -47,6 +49,7 @@ class Product{
                 let temp = try! response.result.get() as! [String:Any]
                 if let error = temp["error"]{
                     let err = error as! String
+                    print(err)
                     completionHandler(err,nil)
                 }else{
                     let msg = temp["message"] as! String

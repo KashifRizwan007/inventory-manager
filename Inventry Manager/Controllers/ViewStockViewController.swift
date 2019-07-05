@@ -19,6 +19,8 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
     private var msg = "Loading..."
     var productData = [String:Any]()
     
+    var boxView = UIView()
+    
     override func viewWillAppear(_ animated: Bool) {
         self.loadData()
     }
@@ -114,6 +116,22 @@ extension ViewStockViewController{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle:  UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete \((self.data[indexPath.row]["name"] as! String))?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+                print("fnewfniaeufbiesbfkjsefwe")
+                self.deleteStock(stockId: self.data[indexPath.row]["id"] as! Int, index: indexPath.row)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(alert, animated: true, completion:nil)
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSection: NSInteger = 0
         
@@ -140,5 +158,51 @@ extension ViewStockViewController{
             
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
+    }
+    private func deleteStock(stockId:Int, index:Int){
+        let delStock = DeleteProduct()
+        
+        addSavingPhotoView()
+        
+        delStock.delStock(stockId: stockId, loginObj: loginObj, completionHandler: { (error,msg)  in
+            DispatchQueue.main.async {
+                if let err = error{
+                    let alert = UIAlertController(title: "Alert", message: err, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }else{
+                    self.boxView.removeFromSuperview()
+                    self.data.remove(at: index)
+                    if self.data.count == 0{
+                        self.msg = "No products found"
+                    }
+                    self.tableView.reloadData()
+                    let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        })
+    }
+    func addSavingPhotoView() {
+        // You only need to adjust this frame to move it anywhere you want
+        boxView = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25, width: 180, height: 50))
+        boxView.backgroundColor = UIColor.white
+        boxView.alpha = 0.8
+        boxView.layer.cornerRadius = 10
+        
+        //Here the spinnier is initialized
+        let activityView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        activityView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityView.startAnimating()
+        
+        let textLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 200, height: 50))
+        textLabel.textColor = UIColor.gray
+        textLabel.text = "Deleting..."
+        
+        boxView.addSubview(activityView)
+        boxView.addSubview(textLabel)
+        
+        view.addSubview(boxView)
     }
 }

@@ -14,21 +14,25 @@ class VewStockDetailsViewController: UIViewController {
     var stock = [String:Any]()
     private var loginObj = login(email: staticLinker.currentUser.email, password: staticLinker.currentUser.password)
 
-    @IBOutlet weak var manufacturer: UILabel!
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var descriptions: UILabel!
-    @IBOutlet weak var quantity: UILabel!
-    @IBOutlet weak var amount: UILabel!
     
+    @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var manufacturer: UITextField!
+    @IBOutlet weak var descriptions: UITextView!
+    @IBOutlet weak var quantity: UITextField!
+    
+    @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var date: UITextField!
+    
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadUI()
         loader.isHidden = true
         loader.hidesWhenStopped = true
+        self.showDatePicker()
     }
     
     private func loadUI(){
@@ -39,64 +43,66 @@ class VewStockDetailsViewController: UIViewController {
         self.amount.text = String(self.stock["amount"] as! Int)
         self.date.text = (self.stock["date"] as! String)
     }
-
-    @IBAction func deleteStock(_ sender: Any) {
-        self.loader.isHidden = false
-        self.loader.startAnimating()
-        self.deleteBtn.isEnabled = false
-        self.delStock(loginObj: loginObj, completionHandler: { (error,msg)  in
-            DispatchQueue.main.async {
-                self.loader.stopAnimating()
-                self.deleteBtn.isEnabled = true
-                if let err = error{
-                    let alert = UIAlertController(title: "Alert", message: err, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                        self.navigationController?.popViewController(animated: true)
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                }else{
-                    let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                        self.navigationController?.popViewController(animated: true)
-                    }))
-                    self.present(alert, animated: true, completion: nil)
+    @IBAction func EditProduct(_ sender: Any) {
+        loader.isHidden = false
+        loader.startAnimating()
+        self.saveBtn.isEnabled = false
+        if let name = self.productName.text, let manufacturer = self.manufacturer.text, let _description = self.descriptions.text, let amount = self.amount.text, let quantity = self.quantity.text, let date = self.date.text{
+            let editPrdt = editProduct(name: name, manufacture: manufacturer, description: _description, amount: Int(amount)!, quantity: Int(quantity)!, date: date, pid:(self.stock["id"] as! Int))
+            editPrdt._editProduct(loginObj: self.loginObj, completionHandler: { (error,message)  in
+                DispatchQueue.main.async {
+                    self.loader.stopAnimating()
+                    self.saveBtn.isEnabled = true
+                    if error != ""{
+                        let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }else{
+                        let alert = UIAlertController(title: "Successful", message: message, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+                            self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 }
-            }
-        })
+            })
+        }else{
+            self.loader.stopAnimating()
+            self.saveBtn.isEnabled = true
+            let alert = UIAlertController(title: "Alert", message: "Please enter all required fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 extension VewStockDetailsViewController{
+    private func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        date.inputAccessoryView = toolbar
+        date.inputView = datePicker
+        
+    }
     
-    private func delStock(loginObj:login, completionHandler: @escaping (_ error: String?, _ msg:String?) -> ()){
-        loginObj.login(completionHandler: { (error) in
-            DispatchQueue.main.async {
-                if error != ""{
-                    completionHandler(error,nil)
-                }else{
-                    self.delStockExt(completionHandler: {(error,msg) in
-                        completionHandler(error,msg)
-                    })
-                    
-                }
-            }
-        }
-    )}
+    @objc private func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        date.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
     
-    private func delStockExt(completionHandler: @escaping (_ error: String?, _ data:String?) -> ()){
-        AF.request(staticLinker.link.deleteProduct, method: .delete, parameters:["pid":self.stock["id"] as! Int], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json","token":staticLinker.currentUser.token]).responseJSON(completionHandler: {(response) in
-            if let error = response.error{
-                let err = error.localizedDescription
-                completionHandler(err,nil)
-            }else{
-                let temp = try! response.result.get() as! [String:Any]
-                let error = temp["error"] as! String
-                if error != ""{
-                    completionHandler(error,nil)
-                }else{
-                    let msg = temp["message"] as! String
-                    completionHandler(nil,msg)
-                }
-            }
-        })
+    @objc private func cancelDatePicker(){
+        self.view.endEditing(true)
     }
 }
