@@ -30,23 +30,20 @@ class login{
                     completionHandler(err)
                 }else{
                     let data = temp["data"] as! [String:Any]
+                    
                     var userData = data["user"] as! [String:Any]
-                    
+                    userData["password"] = self.password
+                    staticLinker.token = (data["token"] as! String)
                     let jsonData = try! JSONSerialization.data(withJSONObject: userData, options: JSONSerialization.WritingOptions.prettyPrinted)
-                    
                     let decoder = JSONDecoder()
-                    
-                    print("For USER: \(userData)")
                     do
                     {
-                        self.User = try decoder.decode(User.self, from: jsonData)
-                        print("\n\(self.User!.role!) ----- \(self.User!.name!) ----- \(self.User!.email!)")
+                        self.User = try decoder.decode(user.self, from: jsonData)
                         staticLinker.currentUser = self.User
                     }
                     catch
                     {
                         completionHandler(error.localizedDescription)
-                        print(error.localizedDescription)
                     }
                     completionHandler("")
                 }

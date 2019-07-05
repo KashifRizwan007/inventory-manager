@@ -9,7 +9,7 @@
 import Foundation
 
 class staticLinker{
-    static var currentUser:user?
+    static var currentUser:user!
     static var link = links()
     static var token:String!
 }

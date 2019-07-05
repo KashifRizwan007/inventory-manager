@@ -14,6 +14,8 @@ class signup{
     var name:String
     var password:String
     var role:Bool
+    var User:user?
+    
     init(email:String, name:String, password:String, role:Bool) {
         self.email = email
         self.name = name
@@ -32,13 +34,20 @@ class signup{
                     completionHandler(err)
                 }else{
                     let data = temp["data"] as! [String:Any]
-                    var userInfo = data["user"] as! [String:Any]
-                    staticLinker.currentUser.role = (userInfo["Role"] as! Bool)
-                    staticLinker.currentUser.email = (userInfo["email"] as! String)
-                    staticLinker.currentUser.id = (userInfo["id"] as! Int)
-                    staticLinker.currentUser.name = (userInfo["name"] as! String)
-                    staticLinker.currentUser.password = self.password
-                    staticLinker.currentUser.token = (data["token"] as! String)
+                    staticLinker.token = (data["token"] as! String)
+                    var userData = data["user"] as! [String:Any]
+                    userData["password"] = self.password
+                    let jsonData = try! JSONSerialization.data(withJSONObject: userData, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    let decoder = JSONDecoder()
+                    do
+                    {
+                        self.User = try decoder.decode(user.self, from: jsonData)
+                        staticLinker.currentUser = self.User
+                    }
+                    catch
+                    {
+                        completionHandler(error.localizedDescription)
+                    }
                     completionHandler("")
                 }
             }

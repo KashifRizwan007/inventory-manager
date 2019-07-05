@@ -13,11 +13,12 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    private var loginObj = login(email: staticLinker.currentUser.email, password: staticLinker.currentUser.password)
+    private var loginObj = login(email: staticLinker.currentUser.email!, password: staticLinker.currentUser.password!)
     var refreshControl = UIRefreshControl()
-    var data = [[String:Any]]()
+    var data:[product]!
     private var msg = "Loading..."
-    var productData = [String:Any]()
+    var productData:product!
+    var getProductObj = GetProduct()
     
     var boxView = UIView()
     
@@ -36,20 +37,20 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
         
     }
     @objc private func loadData(){
-        self.getStock(loginObj: loginObj, completionHandler: { (error,_data)  in
+        self.getProductObj.getStock(loginObj: loginObj, completionHandler: { (error,_data)  in
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
                 if let err = error{
                     self.msg = err
-                    self.data.removeAll()
+                    self.data = nil
                     self.tableView.reloadData()
                 }else{
                     if _data!.isEmpty{
                         self.msg = "No products found"
-                        self.data.removeAll()
+                        self.data = nil
                         self.tableView.reloadData()
                     }else{
-                        self.data = _data!
+                        self.prepareData(data: _data!)
                         self.tableView.reloadData()
                     }
                 }
@@ -60,37 +61,20 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
 
 extension ViewStockViewController{
     
-    private func getStock(loginObj:login, completionHandler: @escaping (_ error: String?, _ data:[[String:Any]]?) -> ()){
-        loginObj.login(completionHandler: { (error) in
-            DispatchQueue.main.async {
-                if error != ""{
-                    completionHandler(error,nil)
-                }else{
-                    self.getStockExt(completionHandler: {(error,data) in
-                        completionHandler(error,data)
-                    })
-                    
-                }
+    func prepareData(data:[[String:Any]]){
+        var temp = [product]()
+        for i in data{
+            let jsonData = try! JSONSerialization.data(withJSONObject: i, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let decoder = JSONDecoder()
+            do
+            {
+                temp.append(try decoder.decode(product.self, from: jsonData))
+            }
+            catch{
+                print(error.localizedDescription)
             }
         }
-        )}
-    
-    private func getStockExt(completionHandler: @escaping (_ error: String?, _ data:[[String:Any]]?) -> ()){
-        AF.request(staticLinker.link.getProducts, method: .get, parameters:nil, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json","token":staticLinker.currentUser.token]).responseJSON(completionHandler: {(response) in
-            if let error = response.error{
-                let err = error.localizedDescription
-                completionHandler(err,nil)
-            }else{
-                let temp = try! response.result.get() as! [String:Any]
-                let error = temp["error"] as! String
-                if error != ""{
-                    completionHandler(error,nil)
-                }else{
-                    let dta = temp["data"] as! [[String:Any]]
-                    completionHandler(nil,dta)
-                }
-            }
-        })
+        self.data = temp
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,7 +82,7 @@ extension ViewStockViewController{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        productData = data[indexPath.row]
+        self.productData = data[indexPath.row]
         self.performSegue(withIdentifier: "productDetail", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -112,7 +96,7 @@ extension ViewStockViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! ViewStockTableViewCell
-        cell.name.text = (data[indexPath.row]["name"] as! String)
+        cell.name.text = data[indexPath.row].name
         return cell
     }
     
@@ -122,10 +106,9 @@ extension ViewStockViewController{
     
     func tableView(_ tableView: UITableView, commit editingStyle:  UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete \((self.data[indexPath.row]["name"] as! String))?", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete \(String(describing: self.data[indexPath.row].name))?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                print("fnewfniaeufbiesbfkjsefwe")
-                self.deleteStock(stockId: self.data[indexPath.row]["id"] as! Int, index: indexPath.row)
+                self.deleteStock(stockId: self.data[indexPath.row].id!, index: indexPath.row)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alert, animated: true, completion:nil)
@@ -135,7 +118,7 @@ extension ViewStockViewController{
     func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSection: NSInteger = 0
         
-        if data.count > 0 {
+        if self.data != nil {
             self.tableView.tableFooterView = nil
             numOfSection = 1
         } else {
@@ -155,15 +138,12 @@ extension ViewStockViewController{
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController()?.rearViewRevealWidth = 280
-            
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }
     private func deleteStock(stockId:Int, index:Int){
         let delStock = DeleteProduct()
-        
-        addSavingPhotoView()
-        
+        self._loader()
         delStock.delStock(stockId: stockId, loginObj: loginObj, completionHandler: { (error,msg)  in
             DispatchQueue.main.async {
                 if let err = error{
@@ -184,7 +164,7 @@ extension ViewStockViewController{
             }
         })
     }
-    func addSavingPhotoView() {
+    private func _loader() {
         // You only need to adjust this frame to move it anywhere you want
         boxView = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25, width: 180, height: 50))
         boxView.backgroundColor = UIColor.white

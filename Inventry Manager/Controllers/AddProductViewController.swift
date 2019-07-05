@@ -23,8 +23,8 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     let datePicker = UIDatePicker()
     
-    private var loginObj = login(email: staticLinker.currentUser.email, password: staticLinker.currentUser.password)
-    private var productObj:Product!
+    private var loginObj = login(email: staticLinker.currentUser.email!, password: staticLinker.currentUser.password!)
+    private var addProductObj:AddProduct!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +32,16 @@ class AddProductViewController: UIViewController {
         loader.isHidden = true
         loader.hidesWhenStopped = true
         self.showDatePicker()
+        
     }
-    @IBAction func AddProduct(_ sender: Any) {
+    @IBAction func AddProductBtn(_ sender: Any) {
         loader.isHidden = false
         loader.startAnimating()
         self.addProductBtn.isEnabled = false
         if let name = self.productName.text, let manufacturer = self.manufacturer.text, let _description = self.descript.text, let amount = self.amount.text, let quantity = self.quantity.text, let date = self.txtDatePicker.text{
-            self.productObj = Product(name: name, manufacture: manufacturer, description: _description, amount: Int(amount)!, quantity: Int(quantity)!, date: date)
-            self.productObj.addProduct(loginObj: self.loginObj, completionHandler: { (error,message)  in
+            
+            self.addProductObj = AddProduct(name: name, manufacture: manufacturer, description: _description, amount: Int(amount)!, quantity: Int(quantity)!, date: date)
+            self.addProductObj.addProduct(loginObj: self.loginObj, completionHandler: { (error,message)  in
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()
                     self.addProductBtn.isEnabled = true

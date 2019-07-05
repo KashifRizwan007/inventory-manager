@@ -15,8 +15,9 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var locationField: textFieldDesign!
     @IBOutlet weak var nameField: textFieldDesign!
-    private var loginObj = login(email: staticLinker.currentUser.email, password: staticLinker.currentUser.password)
-    private var storeObj:Store!
+    private var loginObj = login(email: (staticLinker.currentUser?.email)!, password: (staticLinker.currentUser?.password)!)
+    
+    private var storeObj:StoreAdd!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,9 @@ class AddStoreViewController: UIViewController {
         loader.startAnimating()
         addStoreBtn.isEnabled = false
         if let name = self.nameField.text, let location = self.locationField.text{
-            self.storeObj = Store(storeName: name, storeLocation: location)
+            self.storeObj = StoreAdd(storeName: name, storeLocation: location)
+            
+            
             self.storeObj.addStore(loginObj: self.loginObj, completionHandler: { (error,message)  in
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()

@@ -11,8 +11,8 @@ import Alamofire
 
 class VewStockDetailsViewController: UIViewController {
     
-    var stock = [String:Any]()
-    private var loginObj = login(email: staticLinker.currentUser.email, password: staticLinker.currentUser.password)
+    var stock:product!
+    private var loginObj = login(email: (staticLinker.currentUser?.email)!, password: (staticLinker.currentUser?.password)!)
 
     
     @IBOutlet weak var productName: UILabel!
@@ -36,20 +36,20 @@ class VewStockDetailsViewController: UIViewController {
     }
     
     private func loadUI(){
-        self.manufacturer.text = (self.stock["manufacture"] as! String)
-        self.productName.text = (self.stock["name"] as! String)
-        self.quantity.text = String(self.stock["quantity"] as! Int)
-        self.descriptions.text = (self.stock["description"] as! String)
-        self.amount.text = String(self.stock["amount"] as! Int)
-        self.date.text = (self.stock["date"] as! String)
+        self.manufacturer.text = self.stock.manufacture
+        self.productName.text = self.stock.name
+        self.quantity.text = String(self.stock.quantity!)
+        self.descriptions.text = self.stock.descriptionField
+        self.amount.text = String(self.stock.amount!)
+        self.date.text = self.stock.date
     }
     @IBAction func EditProduct(_ sender: Any) {
         loader.isHidden = false
         loader.startAnimating()
         self.saveBtn.isEnabled = false
         if let name = self.productName.text, let manufacturer = self.manufacturer.text, let _description = self.descriptions.text, let amount = self.amount.text, let quantity = self.quantity.text, let date = self.date.text{
-            let editPrdt = editProduct(name: name, manufacture: manufacturer, description: _description, amount: Int(amount)!, quantity: Int(quantity)!, date: date, pid:(self.stock["id"] as! Int))
-            editPrdt._editProduct(loginObj: self.loginObj, completionHandler: { (error,message)  in
+            let editProductObj = editProduct(name: name, manufacture: manufacturer, description: _description, amount: Int(amount)!, quantity: Int(quantity)!, date: date, pid:self.stock.id!)
+            editProductObj._editProduct(loginObj: self.loginObj, completionHandler: { (error,message)  in
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()
                     self.saveBtn.isEnabled = true
