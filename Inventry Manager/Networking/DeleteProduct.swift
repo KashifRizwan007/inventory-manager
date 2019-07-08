@@ -27,9 +27,10 @@ class DeleteProduct{
     )}
     
     private func delStockExt(stockId:Int, completionHandler: @escaping (_ error: String?, _ data:String?) -> ()){
-        AF.request(staticLinker.link.deleteProduct, method: .delete, parameters:["pid":stockId], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json","token":staticLinker.token]).responseJSON(completionHandler: {(response) in
+        AF.request(staticLinker.link.deleteProduct, method: .delete, parameters: ["pid":stockId], encoding: JSONEncoding.default /*JSONEncoding.default*/, headers: ["Content-Type":"application/json","token":staticLinker.token]).responseJSON(completionHandler: {(response) in
             if let error = response.error{
                 let err = error.localizedDescription
+                print(stockId)
                 completionHandler(err,nil)
             }else{
                 let temp = try! response.result.get() as! [String:Any]

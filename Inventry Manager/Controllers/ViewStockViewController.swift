@@ -12,7 +12,8 @@ import Alamofire
 class ViewStockViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewStockTableView: UITableView!
+    
     private var loginObj = login(email: staticLinker.currentUser.email!, password: staticLinker.currentUser.password!)
     var refreshControl = UIRefreshControl()
     var data:[product]!
@@ -28,14 +29,17 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewStockTableView.tableFooterView = UIView()
         self.slideMenu()
         self.loadData()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 108
-        tableView.refreshControl = self.refreshControl
+        viewStockTableView.rowHeight = UITableView.automaticDimension
+        viewStockTableView.estimatedRowHeight = 108
+        viewStockTableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
     }
+    
     @objc private func loadData(){
         self.getProductObj.getStock(loginObj: loginObj, completionHandler: { (error,_data)  in
             DispatchQueue.main.async {
@@ -43,15 +47,15 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
                 if let err = error{
                     self.msg = err
                     self.data = nil
-                    self.tableView.reloadData()
+                    self.viewStockTableView.reloadData()
                 }else{
                     if _data!.isEmpty{
                         self.msg = "No products found"
                         self.data = nil
-                        self.tableView.reloadData()
+                        self.viewStockTableView.reloadData()
                     }else{
                         self.prepareData(data: _data!)
-                        self.tableView.reloadData()
+                        self.viewStockTableView.reloadData()
                     }
                 }
             }
@@ -62,7 +66,7 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
 extension ViewStockViewController{
     
     func prepareData(data:[[String:Any]]){
-        var temp = [product]()
+        var temp = [product]() 
         for i in data{
             let jsonData = try! JSONSerialization.data(withJSONObject: i, options: JSONSerialization.WritingOptions.prettyPrinted)
             let decoder = JSONDecoder()
@@ -106,12 +110,12 @@ extension ViewStockViewController{
     
     func tableView(_ tableView: UITableView, commit editingStyle:  UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete \(String(describing: self.data[indexPath.row].name))?", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete \(String(describing: self.data[indexPath.row].name!))?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
                 self.deleteStock(stockId: self.data[indexPath.row].id!, index: indexPath.row)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alert, animated: true, completion:nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -119,15 +123,15 @@ extension ViewStockViewController{
         var numOfSection: NSInteger = 0
         
         if self.data != nil {
-            self.tableView.tableFooterView = nil
+            self.viewStockTableView.tableFooterView = nil
             numOfSection = 1
         } else {
             
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.viewStockTableView.bounds.size.width, height: self.viewStockTableView.bounds.size.height))
             noDataLabel.text = msg
             noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
             noDataLabel.textAlignment = NSTextAlignment.center
-            self.tableView.tableFooterView = noDataLabel
+            self.viewStockTableView.tableFooterView = noDataLabel
             
         }
         return numOfSection
@@ -150,16 +154,18 @@ extension ViewStockViewController{
                     let alert = UIAlertController(title: "Alert", message: err, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                }else{
                     self.boxView.removeFromSuperview()
+                }else{
                     self.data.remove(at: index)
                     if self.data.count == 0{
                         self.msg = "No products found"
+                        self.boxView.removeFromSuperview()
                     }
-                    self.tableView.reloadData()
+                    self.viewStockTableView.reloadData()
                     let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    self.boxView.removeFromSuperview()
                 }
             }
         })

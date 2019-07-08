@@ -29,11 +29,20 @@ class AddProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.slideMenu()
+        self.addImageToTextView(textField: self.txtDatePicker, img: UIImage(named: "pullDown")!)
         loader.isHidden = true
         loader.hidesWhenStopped = true
         self.showDatePicker()
         
     }
+    
+    func  addImageToTextView(textField: UITextField, img: UIImage){
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: img.size.width, height: img.size.height))
+        imageView.image = img
+        textField.rightView = imageView
+        textField.rightViewMode = .always
+    }
+    
     @IBAction func AddProductBtn(_ sender: Any) {
         loader.isHidden = false
         loader.startAnimating()

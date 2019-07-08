@@ -18,6 +18,14 @@
 		1239CCEF22CB2AAD00737DA3 /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1239CCEE22CB2AAD00737DA3 /* AddProduct.swift */; };
 		1239CCF122CB471900737DA3 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1239CCF022CB471900737DA3 /* StoreTableViewCell.swift */; };
 		1239CCF522CB8B4400737DA3 /* ViewStockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1239CCF422CB8B4400737DA3 /* ViewStockTableViewCell.swift */; };
+		124931A422D3188E004336AC /* GetStoreProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931A322D3188E004336AC /* GetStoreProducts.swift */; };
+		124931A622D320E6004336AC /* storesDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931A522D320E6004336AC /* storesDataObject.swift */; };
+		124931A822D32101004336AC /* productDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931A722D32101004336AC /* productDataObject.swift */; };
+		124931AA22D32578004336AC /* addSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931A922D32578004336AC /* addSales.swift */; };
+		124931AC22D332A6004336AC /* salesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931AB22D332A6004336AC /* salesData.swift */; };
+		124931AE22D3332F004336AC /* sales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931AD22D3332F004336AC /* sales.swift */; };
+		124931B022D3339B004336AC /* getSalesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931AF22D3339B004336AC /* getSalesRecord.swift */; };
+		124931B222D346CD004336AC /* SalesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124931B122D346CD004336AC /* SalesDetailTableViewCell.swift */; };
 		125D4ACC22C4B2D5003F87EF /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4ACB22C4B2D5003F87EF /* AddStoreViewController.swift */; };
 		125D4ACE22C4B30C003F87EF /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4ACD22C4B30C003F87EF /* AddProductViewController.swift */; };
 		125D4AD022C4BA85003F87EF /* AddSalesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D4ACF22C4BA85003F87EF /* AddSalesDetailViewController.swift */; };
@@ -58,6 +66,14 @@
 		1239CCEE22CB2AAD00737DA3 /* AddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
 		1239CCF022CB471900737DA3 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		1239CCF422CB8B4400737DA3 /* ViewStockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStockTableViewCell.swift; sourceTree = "<group>"; };
+		124931A322D3188E004336AC /* GetStoreProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStoreProducts.swift; sourceTree = "<group>"; };
+		124931A522D320E6004336AC /* storesDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storesDataObject.swift; sourceTree = "<group>"; };
+		124931A722D32101004336AC /* productDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productDataObject.swift; sourceTree = "<group>"; };
+		124931A922D32578004336AC /* addSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSales.swift; sourceTree = "<group>"; };
+		124931AB22D332A6004336AC /* salesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = salesData.swift; sourceTree = "<group>"; };
+		124931AD22D3332F004336AC /* sales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sales.swift; sourceTree = "<group>"; };
+		124931AF22D3339B004336AC /* getSalesRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSalesRecord.swift; sourceTree = "<group>"; };
+		124931B122D346CD004336AC /* SalesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesDetailTableViewCell.swift; sourceTree = "<group>"; };
 		125D4ACB22C4B2D5003F87EF /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		125D4ACD22C4B30C003F87EF /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		125D4ACF22C4BA85003F87EF /* AddSalesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSalesDetailViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +97,7 @@
 		1276421222C39AD40085B177 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		1276421322C39AD40085B177 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1276421522C3A9FA0085B177 /* face.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face.jpg; sourceTree = "<group>"; };
-		1276421B22C3B2070085B177 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		1276421B22C3B2070085B177 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../Controllers/TableViewController.swift; sourceTree = "<group>"; };
 		12D5973222CDE31700D42BB1 /* DeleteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProduct.swift; sourceTree = "<group>"; };
 		12D5973422CE0E2900D42BB1 /* editProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProduct.swift; sourceTree = "<group>"; };
 		12E9491122C5ED5A008E7870 /* ButtonDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
@@ -113,6 +129,9 @@
 				12D5973422CE0E2900D42BB1 /* editProduct.swift */,
 				12D5973222CDE31700D42BB1 /* DeleteProduct.swift */,
 				12266D1C22CF3DEE001BD6C1 /* getProduct.swift */,
+				124931A322D3188E004336AC /* GetStoreProducts.swift */,
+				124931A922D32578004336AC /* addSales.swift */,
+				124931AF22D3339B004336AC /* getSalesRecord.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -123,8 +142,10 @@
 				1276420322C38CCB0085B177 /* Main.storyboard */,
 				1276420822C38CCC0085B177 /* LaunchScreen.storyboard */,
 				1239CCF022CB471900737DA3 /* StoreTableViewCell.swift */,
+				124931B122D346CD004336AC /* SalesDetailTableViewCell.swift */,
 				1239CCF422CB8B4400737DA3 /* ViewStockTableViewCell.swift */,
 				125D4AE222C4F2AA003F87EF /* textFieldDesign.swift */,
+				1276421B22C3B2070085B177 /* TableViewController.swift */,
 				12E9491122C5ED5A008E7870 /* ButtonDesign.swift */,
 			);
 			path = View;
@@ -138,6 +159,10 @@
 				125D4AD922C4D4A0003F87EF /* User.swift */,
 				12266D1A22CF3D53001BD6C1 /* Store.swift */,
 				12266D1E22CF4724001BD6C1 /* Product.swift */,
+				124931AD22D3332F004336AC /* sales.swift */,
+				124931AB22D332A6004336AC /* salesData.swift */,
+				124931A522D320E6004336AC /* storesDataObject.swift */,
+				124931A722D32101004336AC /* productDataObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,7 +223,6 @@
 				125D4ACF22C4BA85003F87EF /* AddSalesDetailViewController.swift */,
 				125D4AD122C4BAAB003F87EF /* ViewStoreViewController.swift */,
 				125D4AD522C4BACF003F87EF /* ViewSalesViewController.swift */,
-				1276421B22C3B2070085B177 /* TableViewController.swift */,
 				125D4AD722C4C45B003F87EF /* LoginViewController.swift */,
 				12E9491322C5FC0A008E7870 /* SignUpViewController.swift */,
 			);
@@ -342,9 +366,12 @@
 			files = (
 				125D4ACC22C4B2D5003F87EF /* AddStoreViewController.swift in Sources */,
 				1264655022CCCCFC00C1F9F2 /* VewStockDetailsViewController.swift in Sources */,
+				124931A622D320E6004336AC /* storesDataObject.swift in Sources */,
 				1239CCF522CB8B4400737DA3 /* ViewStockTableViewCell.swift in Sources */,
 				125D4AD022C4BA85003F87EF /* AddSalesDetailViewController.swift in Sources */,
+				124931B222D346CD004336AC /* SalesDetailTableViewCell.swift in Sources */,
 				125D4AD622C4BACF003F87EF /* ViewSalesViewController.swift in Sources */,
+				124931AE22D3332F004336AC /* sales.swift in Sources */,
 				12E9491222C5ED5A008E7870 /* ButtonDesign.swift in Sources */,
 				125D4AE322C4F2AA003F87EF /* textFieldDesign.swift in Sources */,
 				12266D1B22CF3D53001BD6C1 /* Store.swift in Sources */,
@@ -354,6 +381,7 @@
 				125D4ACE22C4B30C003F87EF /* AddProductViewController.swift in Sources */,
 				1276420222C38CCB0085B177 /* DashBoardViewController.swift in Sources */,
 				1237823122CF343100DF8071 /* viewStore.swift in Sources */,
+				124931A822D32101004336AC /* productDataObject.swift in Sources */,
 				12266D1D22CF3DEE001BD6C1 /* getProduct.swift in Sources */,
 				1276420022C38CCB0085B177 /* AppDelegate.swift in Sources */,
 				12D5973522CE0E2900D42BB1 /* editProduct.swift in Sources */,
@@ -364,8 +392,12 @@
 				125D4ADA22C4D4A0003F87EF /* User.swift in Sources */,
 				12D5973322CDE31700D42BB1 /* DeleteProduct.swift in Sources */,
 				1276421C22C3B2070085B177 /* TableViewController.swift in Sources */,
+				124931A422D3188E004336AC /* GetStoreProducts.swift in Sources */,
+				124931B022D3339B004336AC /* getSalesRecord.swift in Sources */,
 				125D4AD222C4BAAB003F87EF /* ViewStoreViewController.swift in Sources */,
+				124931AA22D32578004336AC /* addSales.swift in Sources */,
 				1239CCEF22CB2AAD00737DA3 /* AddProduct.swift in Sources */,
+				124931AC22D332A6004336AC /* salesData.swift in Sources */,
 				1239CCE922CB26BA00737DA3 /* Login.swift in Sources */,
 				125D4AD822C4C45B003F87EF /* LoginViewController.swift in Sources */,
 				125D4ADC22C4D6A5003F87EF /* AppData.swift in Sources */,

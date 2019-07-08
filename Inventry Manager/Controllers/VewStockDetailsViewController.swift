@@ -30,9 +30,24 @@ class VewStockDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadUI()
+        self.addBoarder()
+        self.addImageToTextView(textField: self.date, img: UIImage(named: "pullDown")!)
         loader.isHidden = true
         loader.hidesWhenStopped = true
         self.showDatePicker()
+    }
+    
+    func addBoarder(){
+        let myColor = UIColor.black
+        self.descriptions.layer.borderColor = myColor.cgColor
+        self.descriptions.layer.borderWidth = 1.0
+    }
+    
+    func  addImageToTextView(textField: UITextField, img: UIImage){
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: img.size.width, height: img.size.height))
+        imageView.image = img
+        textField.rightView = imageView
+        textField.rightViewMode = .always
     }
     
     private func loadUI(){

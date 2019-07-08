@@ -17,25 +17,98 @@ class AddSalesDetailViewController: UIViewController,UIPickerViewDelegate, UIPic
     @IBOutlet weak var quantityTxt: textFieldDesign!
     @IBOutlet weak var unitPriceTxt: textFieldDesign!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var addSalesBtn: ButtonDesign!
+    
     let datePicker = UIDatePicker()
-    var productPickerData:[String] = ["dfasf","fwsf","fwef"]
-    var storePickerData:[String] = ["24","423"]
+    var productPickerData:[productsDataObject] = [productsDataObject(productName: "Loading...", productId: -1)]
+    var storePickerData:[storesDataObject] = [storesDataObject(storeName: "Loading...", storeId: -1)]
     var currentTextField = UITextField()
     var pickerView = UIPickerView()
+    let getAllPickerDataObj = getStoreProducts()
+    var storeIndex = -1
+    var productIndex = -1
     
     private var loginObj = login(email: staticLinker.currentUser.email!, password: staticLinker.currentUser.password!)
+    var salesObj:addInventorySales!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addImageToTextView(textField: self.storeTxt, img: UIImage(named: "pullDown")!)
+        addImageToTextView(textField: self.productTxt, img: UIImage(named: "pullDown")!)
+        addImageToTextView(textField: self.salesDateTxt, img: UIImage(named: "pullDown")!)
+        self.getStore_ProductData()
         loader.isHidden = true
         loader.hidesWhenStopped = true
         self.slideMenu()
         self.showDatePicker()
     }
     
+    @IBAction func addSales(_ sender: Any) {
+        loader.isHidden = false
+        loader.startAnimating()
+        self.addSalesBtn.isEnabled = false
+        if let _ = self.storeTxt.text, let _ = self.productTxt.text, let date = self.salesDateTxt.text, let quantity = self.quantityTxt.text, let price = self.unitPriceTxt.text{
+            self.salesObj = addInventorySales(pid: self.productIndex, sid: self.storeIndex, salesDate: date, quantity: Int(quantity)!, stockSold: Int(price)!)
+            self.salesObj.addSales(loginObj: self.loginObj, completionHandler: { (error,message)  in
+                DispatchQueue.main.async {
+                    self.loader.stopAnimating()
+                    self.addSalesBtn.isEnabled = true
+                    if error != ""{
+                        let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }else{
+                        let alert = UIAlertController(title: "Successful", message: message, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            })
+        }else{
+            self.loader.stopAnimating()
+            self.addSalesBtn.isEnabled = true
+            let alert = UIAlertController(title: "Alert", message: "Please enter all required fields", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    private func getStore_ProductData(){
+        self.menuButton.isEnabled = false
+        self.getAllPickerDataObj.getAllStoresData(completionHandler: {(error,storeData) in
+            if error != nil{
+                let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                self.storePickerData = storeData!
+                self.pickerView.reloadAllComponents()
+                self.getAllPickerDataObj.getAllProductsData(completionHandler: {(error,productData) in
+                    if error != nil{
+                        let alert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }else{
+                        self.productPickerData = productData!
+                        self.pickerView.reloadAllComponents()
+                        self.menuButton.isEnabled = true
+                    }
+                })
+            }
+        })
+    }
+    
 }
 
 extension AddSalesDetailViewController{
+    
+    func  addImageToTextView(textField: UITextField, img: UIImage){
+        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: img.size.width, height: img.size.height))
+        imageView.image = img
+        textField.rightView = imageView
+        textField.rightViewMode = .always
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -51,18 +124,20 @@ extension AddSalesDetailViewController{
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if currentTextField == storeTxt{
-            return self.storePickerData[row]
+            return self.storePickerData[row].storeName
         }else if currentTextField == productTxt{
-            return self.productPickerData[row]
+            return self.productPickerData[row].productName
         }else{
             return ""
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if currentTextField == storeTxt{
-            self.currentTextField.text = self.storePickerData[row]
+            self.storeIndex = self.storePickerData[row].storeId
+            self.currentTextField.text = self.storePickerData[row].storeName
         }else if currentTextField == productTxt{
-            self.currentTextField.text = self.productPickerData[row]
+            self.productIndex = self.productPickerData[row].productId
+            self.currentTextField.text = self.productPickerData[row].productName
         }
     }
     
@@ -70,9 +145,11 @@ extension AddSalesDetailViewController{
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
-        self.pickerView.reloadAllComponents()
+        self.pickerView.selectRow(0, inComponent: 0, animated: true)
         
         self.currentTextField = textField
+        
+        self.pickerView.reloadAllComponents()
         
         self.currentTextField.inputView = pickerView
     }

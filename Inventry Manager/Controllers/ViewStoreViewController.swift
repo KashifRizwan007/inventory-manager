@@ -12,7 +12,7 @@ import Alamofire
 class ViewStoreViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewStoreTableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     private var loginObj = login(email: (staticLinker.currentUser?.email)!, password: (staticLinker.currentUser?.password)!)
     var refreshControl = UIRefreshControl()
@@ -22,9 +22,10 @@ class ViewStoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewStoreTableView.tableFooterView = UIView()
         self.slideMenu()
         self._loadData()
-        tableView.refreshControl = self.refreshControl
+        viewStoreTableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(_loadData), for: .valueChanged)
     }
     
@@ -36,15 +37,15 @@ class ViewStoreViewController: UIViewController,UITableViewDelegate,UITableViewD
                     print(err)
                     self.msg = err
                     self.storeData = nil
-                    self.tableView.reloadData()
+                    self.viewStoreTableView.reloadData()
                 }else{
                     if _data!.isEmpty{
                         self.msg = "No products found"
                         self.storeData.removeAll()
-                        self.tableView.reloadData()
+                        self.viewStoreTableView.reloadData()
                     }else{
                         self.prepareData(data: _data!)
-                        self.tableView.reloadData()
+                        self.viewStoreTableView.reloadData()
                     }
                 }
             }
@@ -93,15 +94,15 @@ extension ViewStoreViewController{
         var numOfSection: NSInteger = 0
         
         if self.storeData != nil {
-            self.tableView.tableFooterView = nil
+            self.viewStoreTableView.tableFooterView = nil
             numOfSection = 1
         } else {
             
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.viewStoreTableView.bounds.size.width, height: self.viewStoreTableView.bounds.size.height))
             noDataLabel.text = msg
             noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
             noDataLabel.textAlignment = NSTextAlignment.center
-            self.tableView.tableFooterView = noDataLabel
+            self.viewStoreTableView.tableFooterView = noDataLabel
             
         }
         return numOfSection
