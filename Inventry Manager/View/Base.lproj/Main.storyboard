@@ -269,7 +269,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUO-mA-lSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2233.3333333333335" y="221.65178571428569"/>
+            <point key="canvasLocation" x="-2986" y="250"/>
         </scene>
         <!--Sales Details-->
         <scene sceneID="kMN-iC-667">
@@ -453,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIj-JT-FUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3043" y="988"/>
+            <point key="canvasLocation" x="-3849" y="988"/>
         </scene>
         <!--Stock-->
         <scene sceneID="9yg-sP-ivY">
@@ -530,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw1-Aw-aWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1466" y="989"/>
+            <point key="canvasLocation" x="-2233" y="988"/>
         </scene>
         <!--Stock Details-->
         <scene sceneID="otf-5t-qm0">
@@ -722,7 +722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E37-VZ-IeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713.04347826086962" y="988.39285714285711"/>
+            <point key="canvasLocation" x="-1465" y="988"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -742,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3849" y="222"/>
+            <point key="canvasLocation" x="-4701" y="250"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="MbL-15-va9">
@@ -752,87 +752,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBX-dt-yXJ" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="385" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-dr-SnL" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="424" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-QR-q05" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="463" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cU-Pz-mFb">
-                                <rect key="frame" x="30" y="328" width="354" height="37"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jq-Xb-WQP">
-                                <rect key="frame" x="0.0" y="533" width="414" height="70"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVO-YK-HwC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBX-dt-yXJ" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="259.5" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mk7-QU-V3P">
+                                        <rect key="frame" x="188" y="376.5" width="38" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KgD-Gw-uJQ">
+                                        <rect key="frame" x="197" y="530.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-QR-q05" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="337.5" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cU-Pz-mFb">
+                                        <rect key="frame" x="163.5" y="182.5" width="87.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jq-Xb-WQP">
+                                        <rect key="frame" x="0.0" y="407.5" width="414" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="tIW-QF-SRJ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="GUa-bX-ElD" id="NhM-lW-Ld1"/>
+                                            <outlet property="delegate" destination="GUa-bX-ElD" id="JWX-C2-qvA"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL2-wV-Z6I" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="492.5" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="qar-8e-1ty"/>
+                                        </constraints>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpButton:" destination="GUa-bX-ElD" eventType="touchUpInside" id="YvI-YL-zHd"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-dr-SnL" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="298.5" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="tIW-QF-SRJ"/>
+                                    <constraint firstItem="ihh-QR-q05" firstAttribute="leading" secondItem="EVO-YK-HwC" secondAttribute="leading" constant="50" id="4s8-bU-u9d"/>
+                                    <constraint firstItem="Mk7-QU-V3P" firstAttribute="top" secondItem="ihh-QR-q05" secondAttribute="bottom" constant="15" id="8bW-zE-Iuz"/>
+                                    <constraint firstItem="0Jq-Xb-WQP" firstAttribute="centerX" secondItem="EVO-YK-HwC" secondAttribute="centerX" id="GL7-JM-sYD"/>
+                                    <constraint firstItem="YBX-dt-yXJ" firstAttribute="leading" secondItem="EVO-YK-HwC" secondAttribute="leading" constant="50" id="IzS-kH-Pvy"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Jq-Xb-WQP" secondAttribute="trailing" id="KG5-up-a7W"/>
+                                    <constraint firstItem="ihh-QR-q05" firstAttribute="top" secondItem="Ad6-dr-SnL" secondAttribute="bottom" constant="15" id="KZr-ga-T0v"/>
+                                    <constraint firstItem="KgD-Gw-uJQ" firstAttribute="centerX" secondItem="EVO-YK-HwC" secondAttribute="centerX" id="LP3-6f-dll"/>
+                                    <constraint firstItem="1cU-Pz-mFb" firstAttribute="centerX" secondItem="EVO-YK-HwC" secondAttribute="centerX" id="Q1d-Lr-Vue"/>
+                                    <constraint firstItem="yL2-wV-Z6I" firstAttribute="centerX" secondItem="KgD-Gw-uJQ" secondAttribute="centerX" id="RRB-HY-CoV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ad6-dr-SnL" secondAttribute="trailing" constant="50" id="RVP-rX-Fft"/>
+                                    <constraint firstAttribute="trailing" secondItem="ihh-QR-q05" secondAttribute="trailing" constant="50" id="VhE-XT-8tz"/>
+                                    <constraint firstItem="Mk7-QU-V3P" firstAttribute="centerX" secondItem="EVO-YK-HwC" secondAttribute="centerX" id="Wsq-gt-rgp"/>
+                                    <constraint firstItem="0Jq-Xb-WQP" firstAttribute="top" secondItem="Mk7-QU-V3P" secondAttribute="bottom" constant="10" id="ddp-bV-SRr"/>
+                                    <constraint firstItem="KgD-Gw-uJQ" firstAttribute="top" secondItem="yL2-wV-Z6I" secondAttribute="bottom" constant="8" id="egt-bF-llt"/>
+                                    <constraint firstItem="0Jq-Xb-WQP" firstAttribute="leading" secondItem="EVO-YK-HwC" secondAttribute="leading" id="hMR-Lz-ipP"/>
+                                    <constraint firstItem="Ad6-dr-SnL" firstAttribute="top" secondItem="YBX-dt-yXJ" secondAttribute="bottom" constant="15" id="hqd-8q-44I"/>
+                                    <constraint firstItem="yL2-wV-Z6I" firstAttribute="centerX" secondItem="EVO-YK-HwC" secondAttribute="centerX" id="i7B-98-gna"/>
+                                    <constraint firstItem="YBX-dt-yXJ" firstAttribute="top" secondItem="1cU-Pz-mFb" secondAttribute="bottom" constant="40" id="iyH-8e-CPO"/>
+                                    <constraint firstItem="Ad6-dr-SnL" firstAttribute="leading" secondItem="EVO-YK-HwC" secondAttribute="leading" constant="50" id="izg-4r-7b9"/>
+                                    <constraint firstItem="yL2-wV-Z6I" firstAttribute="top" secondItem="0Jq-Xb-WQP" secondAttribute="bottom" constant="15" id="qAS-8L-xyK"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBX-dt-yXJ" secondAttribute="trailing" constant="50" id="rTB-By-60Q"/>
+                                    <constraint firstItem="Mk7-QU-V3P" firstAttribute="centerY" secondItem="EVO-YK-HwC" secondAttribute="centerY" id="tHk-4D-XNh"/>
+                                    <constraint firstAttribute="bottom" secondItem="KgD-Gw-uJQ" secondAttribute="bottom" constant="20" id="yMd-zQ-MMh"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="GUa-bX-ElD" id="NhM-lW-Ld1"/>
-                                    <outlet property="delegate" destination="GUa-bX-ElD" id="JWX-C2-qvA"/>
-                                </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mk7-QU-V3P">
-                                <rect key="frame" x="188" y="502" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL2-wV-Z6I" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="167" y="618" width="80" height="30"/>
-                                <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="qar-8e-1ty"/>
-                                </constraints>
-                                <state key="normal" title="SIGN UP">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpButton:" destination="GUa-bX-ElD" eventType="touchUpInside" id="YvI-YL-zHd"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KgD-Gw-uJQ">
-                                <rect key="frame" x="197" y="656" width="20" height="20"/>
-                            </activityIndicatorView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="trailing" secondItem="Ad6-dr-SnL" secondAttribute="trailing" constant="50" id="0rH-TH-BAn"/>
-                            <constraint firstItem="ihh-QR-q05" firstAttribute="top" secondItem="Ad6-dr-SnL" secondAttribute="bottom" constant="15" id="2db-eY-o5p"/>
-                            <constraint firstItem="1cU-Pz-mFb" firstAttribute="leading" secondItem="9K0-Nb-K0x" secondAttribute="leading" constant="30" id="5A6-qK-WwN"/>
-                            <constraint firstItem="YBX-dt-yXJ" firstAttribute="top" secondItem="1cU-Pz-mFb" secondAttribute="bottom" constant="20" id="7cK-VY-p9J"/>
-                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="trailing" secondItem="1cU-Pz-mFb" secondAttribute="trailing" constant="30" id="AOe-Rm-PwP"/>
-                            <constraint firstItem="0Jq-Xb-WQP" firstAttribute="leading" secondItem="9K0-Nb-K0x" secondAttribute="leading" id="CmL-fQ-BwH"/>
-                            <constraint firstItem="yL2-wV-Z6I" firstAttribute="centerX" secondItem="9K0-Nb-K0x" secondAttribute="centerX" id="D8t-uM-X8H"/>
-                            <constraint firstItem="ihh-QR-q05" firstAttribute="leading" secondItem="9K0-Nb-K0x" secondAttribute="leading" constant="50" id="Dqb-3D-Hhw"/>
-                            <constraint firstItem="0Jq-Xb-WQP" firstAttribute="top" secondItem="Mk7-QU-V3P" secondAttribute="bottom" constant="10" id="FaN-OC-m5s"/>
-                            <constraint firstItem="Ad6-dr-SnL" firstAttribute="top" secondItem="YBX-dt-yXJ" secondAttribute="bottom" constant="15" id="GVd-fV-Ey7"/>
-                            <constraint firstItem="KgD-Gw-uJQ" firstAttribute="top" secondItem="yL2-wV-Z6I" secondAttribute="bottom" constant="8" id="HoD-2j-fwz"/>
-                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="trailing" secondItem="ihh-QR-q05" secondAttribute="trailing" constant="50" id="K20-bu-Zz5"/>
-                            <constraint firstItem="Mk7-QU-V3P" firstAttribute="top" secondItem="ihh-QR-q05" secondAttribute="bottom" constant="15" id="Z89-se-RaK"/>
-                            <constraint firstItem="YBX-dt-yXJ" firstAttribute="leading" secondItem="9K0-Nb-K0x" secondAttribute="leading" constant="50" id="dWB-Gp-RBf"/>
-                            <constraint firstItem="Mk7-QU-V3P" firstAttribute="centerX" secondItem="9K0-Nb-K0x" secondAttribute="centerX" id="huL-AA-HV9"/>
-                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="trailing" secondItem="YBX-dt-yXJ" secondAttribute="trailing" constant="50" id="ieb-GG-nF2"/>
-                            <constraint firstItem="Ad6-dr-SnL" firstAttribute="leading" secondItem="9K0-Nb-K0x" secondAttribute="leading" constant="50" id="joB-8p-zEa"/>
-                            <constraint firstItem="KgD-Gw-uJQ" firstAttribute="centerX" secondItem="9K0-Nb-K0x" secondAttribute="centerX" id="mBJ-Tx-amB"/>
-                            <constraint firstItem="yL2-wV-Z6I" firstAttribute="top" secondItem="0Jq-Xb-WQP" secondAttribute="bottom" constant="15" id="nii-9D-fi6"/>
-                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="trailing" secondItem="0Jq-Xb-WQP" secondAttribute="trailing" id="r89-UM-Mv4"/>
-                            <constraint firstItem="ihh-QR-q05" firstAttribute="centerX" secondItem="9K0-Nb-K0x" secondAttribute="centerX" id="w6L-6f-K8f"/>
-                            <constraint firstItem="ihh-QR-q05" firstAttribute="centerY" secondItem="9K0-Nb-K0x" secondAttribute="centerY" id="xkp-WV-H5O"/>
+                            <constraint firstItem="EVO-YK-HwC" firstAttribute="leading" secondItem="D2e-x8-D6r" secondAttribute="leading" id="9qC-CU-OPO"/>
+                            <constraint firstItem="EVO-YK-HwC" firstAttribute="top" secondItem="9K0-Nb-K0x" secondAttribute="top" id="e3c-Ro-Gd4"/>
+                            <constraint firstAttribute="trailing" secondItem="EVO-YK-HwC" secondAttribute="trailing" id="uN2-0V-bVq"/>
+                            <constraint firstItem="9K0-Nb-K0x" firstAttribute="bottom" secondItem="EVO-YK-HwC" secondAttribute="bottom" id="vG2-ql-A9K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9K0-Nb-K0x"/>
                     </view>
@@ -865,7 +877,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s60-R7-mhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3849" y="988"/>
+            <point key="canvasLocation" x="-4701" y="988"/>
         </scene>
         <!--Add Store View Controller-->
         <scene sceneID="uZX-Fq-Fq1">
@@ -875,56 +887,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2Y-Wd-YIC">
-                                <rect key="frame" x="157.5" y="287" width="99" height="37"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-4D-99U" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="167" y="512" width="80" height="30"/>
-                                <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVL-C9-RBs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-3u-AgS" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="414" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6T-Df-H4X" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="375" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2Y-Wd-YIC">
+                                        <rect key="frame" x="157.5" y="298" width="99" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-NT-ljI">
+                                        <rect key="frame" x="197" y="501" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-4D-99U" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="463" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Mz4-Hs-v52"/>
+                                        </constraints>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addStore:" destination="keq-7e-cHA" eventType="touchUpInside" id="aSv-a7-A3A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Mz4-Hs-v52"/>
+                                    <constraint firstItem="Yhj-3u-AgS" firstAttribute="centerX" secondItem="fkS-4D-99U" secondAttribute="centerX" id="AG1-fL-Rag"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yhj-3u-AgS" secondAttribute="trailing" constant="50" id="FMp-aw-f9h"/>
+                                    <constraint firstAttribute="bottom" secondItem="7lZ-NT-ljI" secondAttribute="bottom" constant="20" id="Px8-a1-R0S"/>
+                                    <constraint firstItem="y6T-Df-H4X" firstAttribute="top" secondItem="F2Y-Wd-YIC" secondAttribute="bottom" constant="40" id="Q4H-XT-dQj"/>
+                                    <constraint firstItem="7lZ-NT-ljI" firstAttribute="top" secondItem="fkS-4D-99U" secondAttribute="bottom" constant="8" id="QgT-c5-jkP"/>
+                                    <constraint firstItem="fkS-4D-99U" firstAttribute="centerX" secondItem="7lZ-NT-ljI" secondAttribute="centerX" id="UUv-Q7-QDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="y6T-Df-H4X" secondAttribute="trailing" constant="50" id="Ufr-j2-3Ds"/>
+                                    <constraint firstItem="Yhj-3u-AgS" firstAttribute="leading" secondItem="fVL-C9-RBs" secondAttribute="leading" constant="50" id="VRN-39-IKe"/>
+                                    <constraint firstItem="fkS-4D-99U" firstAttribute="top" secondItem="Yhj-3u-AgS" secondAttribute="bottom" constant="25" id="VcQ-hV-Of8"/>
+                                    <constraint firstItem="Yhj-3u-AgS" firstAttribute="top" secondItem="y6T-Df-H4X" secondAttribute="bottom" constant="15" id="arM-Zb-HKo"/>
+                                    <constraint firstItem="y6T-Df-H4X" firstAttribute="leading" secondItem="fVL-C9-RBs" secondAttribute="leading" constant="50" id="dUs-Zu-y3P"/>
+                                    <constraint firstItem="y6T-Df-H4X" firstAttribute="centerX" secondItem="fVL-C9-RBs" secondAttribute="centerX" id="mdu-8m-A1w"/>
+                                    <constraint firstItem="y6T-Df-H4X" firstAttribute="centerY" secondItem="fVL-C9-RBs" secondAttribute="centerY" id="oKx-bt-MI2"/>
+                                    <constraint firstItem="F2Y-Wd-YIC" firstAttribute="centerX" secondItem="fVL-C9-RBs" secondAttribute="centerX" id="orK-6v-QHv"/>
+                                    <constraint firstItem="F2Y-Wd-YIC" firstAttribute="centerX" secondItem="y6T-Df-H4X" secondAttribute="centerX" id="zSA-YI-tdd"/>
                                 </constraints>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addStore:" destination="keq-7e-cHA" eventType="touchUpInside" id="aSv-a7-A3A"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-3u-AgS" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="463" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-NT-ljI">
-                                <rect key="frame" x="197" y="550" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6T-Df-H4X" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="424" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bEf-o3-rw4" firstAttribute="trailing" secondItem="Yhj-3u-AgS" secondAttribute="trailing" constant="50" id="0pZ-R7-Nbq"/>
-                            <constraint firstItem="7lZ-NT-ljI" firstAttribute="top" secondItem="fkS-4D-99U" secondAttribute="bottom" constant="8" id="3Uc-TJ-6jQ"/>
-                            <constraint firstItem="y6T-Df-H4X" firstAttribute="leading" secondItem="bEf-o3-rw4" secondAttribute="leading" constant="50" id="6Fq-8M-kEL"/>
-                            <constraint firstItem="7lZ-NT-ljI" firstAttribute="centerX" secondItem="bEf-o3-rw4" secondAttribute="centerX" id="Dxb-Zg-73e"/>
-                            <constraint firstItem="Yhj-3u-AgS" firstAttribute="top" secondItem="y6T-Df-H4X" secondAttribute="bottom" constant="15" id="Kr3-8T-UH4"/>
-                            <constraint firstItem="Yhj-3u-AgS" firstAttribute="leading" secondItem="bEf-o3-rw4" secondAttribute="leading" constant="50" id="Ppr-C1-LAs"/>
-                            <constraint firstItem="Yhj-3u-AgS" firstAttribute="centerY" secondItem="bEf-o3-rw4" secondAttribute="centerY" id="SR5-gA-MQa"/>
-                            <constraint firstItem="F2Y-Wd-YIC" firstAttribute="centerX" secondItem="bEf-o3-rw4" secondAttribute="centerX" id="Ueo-Zj-O2v"/>
-                            <constraint firstItem="bEf-o3-rw4" firstAttribute="trailing" secondItem="y6T-Df-H4X" secondAttribute="trailing" constant="50" id="Uq3-A8-tUZ"/>
-                            <constraint firstItem="Yhj-3u-AgS" firstAttribute="centerX" secondItem="bEf-o3-rw4" secondAttribute="centerX" id="anZ-KQ-wTJ"/>
-                            <constraint firstItem="fkS-4D-99U" firstAttribute="top" secondItem="Yhj-3u-AgS" secondAttribute="bottom" constant="25" id="gzc-9L-Vqe"/>
-                            <constraint firstItem="fkS-4D-99U" firstAttribute="centerX" secondItem="bEf-o3-rw4" secondAttribute="centerX" id="ocw-ed-fWh"/>
-                            <constraint firstItem="y6T-Df-H4X" firstAttribute="top" secondItem="F2Y-Wd-YIC" secondAttribute="bottom" constant="100" id="tJ4-aJ-GKj"/>
+                            <constraint firstItem="bEf-o3-rw4" firstAttribute="trailing" secondItem="fVL-C9-RBs" secondAttribute="trailing" id="10g-4N-Ug5"/>
+                            <constraint firstItem="fVL-C9-RBs" firstAttribute="leading" secondItem="bEf-o3-rw4" secondAttribute="leading" id="L3b-Vx-Qgl"/>
+                            <constraint firstItem="bEf-o3-rw4" firstAttribute="bottom" secondItem="fVL-C9-RBs" secondAttribute="bottom" id="Osp-1x-2UT"/>
+                            <constraint firstItem="fVL-C9-RBs" firstAttribute="top" secondItem="bEf-o3-rw4" secondAttribute="top" id="dNX-4Z-qQQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bEf-o3-rw4"/>
                     </view>
@@ -953,92 +978,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STH-3C-nDA" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="399" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Manufacturer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YL4-vG-5xP" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="431" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnJ-M4-p6F" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="463" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-hS-B1L" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="495" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRP-JW-Tut" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="527" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyA-qN-tRQ">
-                                <rect key="frame" x="161.5" y="291.5" width="91" height="27.5"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxf-GH-TXx" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="167" y="598" width="80" height="30"/>
-                                <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZz-qF-qW7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-hS-B1L" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="414" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyA-qN-tRQ">
+                                        <rect key="frame" x="146" y="220" width="122" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxf-GH-TXx" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="536" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="RHD-yx-zRe"/>
+                                        </constraints>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddProductBtn:" destination="AaF-RV-sXr" eventType="touchUpInside" id="TCk-5F-OMd"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnJ-M4-p6F" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="375" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STH-3C-nDA" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="297" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRP-JW-Tut" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="453" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAy-xO-JJm" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="492" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="taR-U7-GIc">
+                                        <rect key="frame" x="197" y="581" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Manufacturer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YL4-vG-5xP" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="336" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="RHD-yx-zRe"/>
+                                    <constraint firstItem="STH-3C-nDA" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="063-lo-zeU"/>
+                                    <constraint firstItem="taR-U7-GIc" firstAttribute="top" secondItem="hxf-GH-TXx" secondAttribute="bottom" constant="15" id="3vj-Rp-8cc"/>
+                                    <constraint firstItem="YL4-vG-5xP" firstAttribute="top" secondItem="STH-3C-nDA" secondAttribute="bottom" constant="15" id="5UP-SY-gyM"/>
+                                    <constraint firstAttribute="trailing" secondItem="fgf-hS-B1L" secondAttribute="trailing" constant="50" id="7UJ-9b-DeY"/>
+                                    <constraint firstItem="STH-3C-nDA" firstAttribute="top" secondItem="FyA-qN-tRQ" secondAttribute="bottom" constant="40" id="CgC-ei-eZy"/>
+                                    <constraint firstItem="FyA-qN-tRQ" firstAttribute="centerX" secondItem="JZz-qF-qW7" secondAttribute="centerX" id="Fqo-k9-aTM"/>
+                                    <constraint firstItem="lnJ-M4-p6F" firstAttribute="top" secondItem="YL4-vG-5xP" secondAttribute="bottom" constant="15" id="Fzr-L8-xwS"/>
+                                    <constraint firstItem="lnJ-M4-p6F" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="Jdv-jS-1Ig"/>
+                                    <constraint firstAttribute="trailing" secondItem="rRP-JW-Tut" secondAttribute="trailing" constant="50" id="M7H-sI-mlG"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAy-xO-JJm" secondAttribute="trailing" constant="50" id="N8u-Xk-5Mb"/>
+                                    <constraint firstItem="lnJ-M4-p6F" firstAttribute="centerX" secondItem="JZz-qF-qW7" secondAttribute="centerX" id="Q0J-VP-Bbh"/>
+                                    <constraint firstItem="cAy-xO-JJm" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="TCy-fQ-vPn"/>
+                                    <constraint firstItem="hxf-GH-TXx" firstAttribute="top" secondItem="cAy-xO-JJm" secondAttribute="bottom" constant="20" id="UwJ-hv-zWL"/>
+                                    <constraint firstAttribute="bottom" secondItem="taR-U7-GIc" secondAttribute="bottom" constant="213" id="WFh-n8-i2H"/>
+                                    <constraint firstItem="fgf-hS-B1L" firstAttribute="top" secondItem="lnJ-M4-p6F" secondAttribute="bottom" constant="15" id="YGT-fj-Qlg"/>
+                                    <constraint firstAttribute="trailing" secondItem="STH-3C-nDA" secondAttribute="trailing" constant="50" id="Yjf-uf-cjS"/>
+                                    <constraint firstItem="cAy-xO-JJm" firstAttribute="top" secondItem="rRP-JW-Tut" secondAttribute="bottom" constant="15" id="ag1-Ec-9hJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="YL4-vG-5xP" secondAttribute="trailing" constant="50" id="e6x-m9-YY3"/>
+                                    <constraint firstAttribute="trailing" secondItem="lnJ-M4-p6F" secondAttribute="trailing" constant="50" id="egP-Sy-gJS"/>
+                                    <constraint firstItem="lnJ-M4-p6F" firstAttribute="centerY" secondItem="JZz-qF-qW7" secondAttribute="centerY" id="fbO-94-uZu"/>
+                                    <constraint firstItem="hxf-GH-TXx" firstAttribute="centerX" secondItem="JZz-qF-qW7" secondAttribute="centerX" id="hCS-Vh-T8v"/>
+                                    <constraint firstItem="taR-U7-GIc" firstAttribute="centerX" secondItem="JZz-qF-qW7" secondAttribute="centerX" id="i7r-uI-XGW"/>
+                                    <constraint firstItem="fgf-hS-B1L" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="ijX-o1-mZ7"/>
+                                    <constraint firstItem="rRP-JW-Tut" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="ri0-8j-GdP"/>
+                                    <constraint firstItem="rRP-JW-Tut" firstAttribute="top" secondItem="fgf-hS-B1L" secondAttribute="bottom" constant="15" id="sRf-ga-ruF"/>
+                                    <constraint firstItem="YL4-vG-5xP" firstAttribute="leading" secondItem="JZz-qF-qW7" secondAttribute="leading" constant="50" id="yfS-VF-gMe"/>
                                 </constraints>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddProductBtn:" destination="AaF-RV-sXr" eventType="touchUpInside" id="TCk-5F-OMd"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAy-xO-JJm" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="559" width="305" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="taR-U7-GIc">
-                                <rect key="frame" x="197" y="636" width="20" height="20"/>
-                            </activityIndicatorView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YL4-vG-5xP" firstAttribute="top" secondItem="STH-3C-nDA" secondAttribute="bottom" constant="8" id="0Sb-Vj-qZ8"/>
-                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="YL4-vG-5xP" secondAttribute="trailing" constant="50" id="1Bq-qa-E9W"/>
-                            <constraint firstItem="hxf-GH-TXx" firstAttribute="centerX" secondItem="8cu-XO-Phm" secondAttribute="centerX" id="8Lm-Hn-7R8"/>
-                            <constraint firstItem="hxf-GH-TXx" firstAttribute="top" secondItem="cAy-xO-JJm" secondAttribute="bottom" constant="15" id="B64-iL-Ojq"/>
-                            <constraint firstItem="fgf-hS-B1L" firstAttribute="top" secondItem="lnJ-M4-p6F" secondAttribute="bottom" constant="8" id="CNk-VE-8oh"/>
-                            <constraint firstItem="taR-U7-GIc" firstAttribute="top" secondItem="hxf-GH-TXx" secondAttribute="bottom" constant="8" id="ElR-8v-2iI"/>
-                            <constraint firstItem="taR-U7-GIc" firstAttribute="centerX" secondItem="8cu-XO-Phm" secondAttribute="centerX" id="KM0-Yw-ULM"/>
-                            <constraint firstItem="FyA-qN-tRQ" firstAttribute="centerX" secondItem="8cu-XO-Phm" secondAttribute="centerX" id="Ofc-WN-bqy"/>
-                            <constraint firstItem="lnJ-M4-p6F" firstAttribute="centerX" secondItem="8cu-XO-Phm" secondAttribute="centerX" id="SNB-EJ-qEz"/>
-                            <constraint firstItem="lnJ-M4-p6F" firstAttribute="centerY" secondItem="8cu-XO-Phm" secondAttribute="centerY" id="W7x-Ul-lRw"/>
-                            <constraint firstItem="STH-3C-nDA" firstAttribute="top" secondItem="FyA-qN-tRQ" secondAttribute="bottom" constant="80" id="XaU-ke-neT"/>
-                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="fgf-hS-B1L" secondAttribute="trailing" constant="50" id="XbW-IS-DjE"/>
-                            <constraint firstItem="rRP-JW-Tut" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="YCc-DS-2jj"/>
-                            <constraint firstItem="fgf-hS-B1L" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="YVI-6h-zDc"/>
-                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="STH-3C-nDA" secondAttribute="trailing" constant="50" id="eaF-od-KeN"/>
-                            <constraint firstItem="cAy-xO-JJm" firstAttribute="top" secondItem="rRP-JW-Tut" secondAttribute="bottom" constant="8" id="ewk-vb-3Xz"/>
-                            <constraint firstItem="rRP-JW-Tut" firstAttribute="top" secondItem="fgf-hS-B1L" secondAttribute="bottom" constant="8" id="fE0-mz-5M6"/>
-                            <constraint firstItem="lnJ-M4-p6F" firstAttribute="top" secondItem="YL4-vG-5xP" secondAttribute="bottom" constant="8" id="gsH-fa-XrD"/>
-                            <constraint firstItem="cAy-xO-JJm" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="krV-OI-lef"/>
-                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="cAy-xO-JJm" secondAttribute="trailing" constant="59" id="m8X-9A-rz3"/>
-                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="lnJ-M4-p6F" secondAttribute="trailing" constant="50" id="uBm-mt-oFy"/>
-                            <constraint firstItem="YL4-vG-5xP" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="yXu-ps-Czr"/>
-                            <constraint firstItem="STH-3C-nDA" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="ymM-O3-Jbl"/>
-                            <constraint firstAttribute="trailing" secondItem="rRP-JW-Tut" secondAttribute="trailing" constant="50" id="zOE-IU-LQG"/>
-                            <constraint firstItem="lnJ-M4-p6F" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" constant="50" id="zzi-bd-aUy"/>
+                            <constraint firstItem="8cu-XO-Phm" firstAttribute="trailing" secondItem="JZz-qF-qW7" secondAttribute="trailing" id="1t7-xv-Asn"/>
+                            <constraint firstItem="8cu-XO-Phm" firstAttribute="bottom" secondItem="JZz-qF-qW7" secondAttribute="bottom" id="PM6-Ow-lPW"/>
+                            <constraint firstItem="JZz-qF-qW7" firstAttribute="leading" secondItem="8cu-XO-Phm" secondAttribute="leading" id="VGf-Am-Bsj"/>
+                            <constraint firstItem="JZz-qF-qW7" firstAttribute="top" secondItem="8cu-XO-Phm" secondAttribute="top" id="XTf-Qw-f9l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8cu-XO-Phm"/>
                     </view>
@@ -1061,7 +1098,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-J6-xFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="-477"/>
+            <point key="canvasLocation" x="118.84057971014494" y="-477.45535714285711"/>
         </scene>
         <!--Add Sales Detail View Controller-->
         <scene sceneID="HL7-s9-Txr">
@@ -1071,93 +1108,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-fu-LEi" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="399" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="AJH-bP-uhb" id="4J8-QR-2hF"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-yL-aQc" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="431" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="AJH-bP-uhb" id="OOq-oy-IPG"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sales Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lz0-iP-VT4" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="463" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vEV-rX-EbI" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="495" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Sales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGD-Eq-ppo">
-                                <rect key="frame" x="170" y="291" width="74" height="28"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tvu-32-z6p">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNc-1X-z1A" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="497" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="f2T-d0-VAe"/>
+                                        </constraints>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addSales:" destination="AJH-bP-uhb" eventType="touchUpInside" id="GOa-ji-UB6"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-fu-LEi" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="297" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AJH-bP-uhb" id="4J8-QR-2hF"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sales Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lz0-iP-VT4" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="375" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Sales" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGD-Eq-ppo">
+                                        <rect key="frame" x="157.5" y="220" width="99.5" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vEV-rX-EbI" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="414" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-yL-aQc" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="336" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="AJH-bP-uhb" id="OOq-oy-IPG"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Unit Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24N-a1-lGm" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="453" width="314" height="24"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sQ9-yp-n68">
+                                        <rect key="frame" x="197" y="542" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="jHQ-pd-cEz"/>
+                                    <constraint firstItem="lz0-iP-VT4" firstAttribute="centerY" secondItem="Tvu-32-z6p" secondAttribute="centerY" id="0Lj-ey-yK2"/>
+                                    <constraint firstItem="24N-a1-lGm" firstAttribute="top" secondItem="vEV-rX-EbI" secondAttribute="bottom" constant="15" id="5pl-tp-AYf"/>
+                                    <constraint firstItem="vEV-rX-EbI" firstAttribute="top" secondItem="lz0-iP-VT4" secondAttribute="bottom" constant="15" id="91h-cc-u0b"/>
+                                    <constraint firstItem="vEV-rX-EbI" firstAttribute="leading" secondItem="Tvu-32-z6p" secondAttribute="leading" constant="50" id="Are-r3-0u5"/>
+                                    <constraint firstItem="lz0-iP-VT4" firstAttribute="leading" secondItem="Tvu-32-z6p" secondAttribute="leading" constant="50" id="GER-1h-bJn"/>
+                                    <constraint firstItem="i5S-fu-LEi" firstAttribute="leading" secondItem="Tvu-32-z6p" secondAttribute="leading" constant="50" id="HKb-Sj-N3Q"/>
+                                    <constraint firstItem="rNc-1X-z1A" firstAttribute="centerX" secondItem="Tvu-32-z6p" secondAttribute="centerX" id="KwN-Kn-4TL"/>
+                                    <constraint firstItem="pGD-Eq-ppo" firstAttribute="centerX" secondItem="Tvu-32-z6p" secondAttribute="centerX" id="LiU-h7-Jre"/>
+                                    <constraint firstItem="24N-a1-lGm" firstAttribute="leading" secondItem="Tvu-32-z6p" secondAttribute="leading" constant="50" id="LxA-DJ-2Fr"/>
+                                    <constraint firstItem="hcQ-yL-aQc" firstAttribute="leading" secondItem="Tvu-32-z6p" secondAttribute="leading" constant="50" id="NWx-NB-RW1"/>
+                                    <constraint firstAttribute="bottom" secondItem="sQ9-yp-n68" secondAttribute="bottom" constant="212" id="PzW-Dz-qPy"/>
+                                    <constraint firstAttribute="trailing" secondItem="i5S-fu-LEi" secondAttribute="trailing" constant="50" id="Rnc-NB-ENr"/>
+                                    <constraint firstAttribute="trailing" secondItem="hcQ-yL-aQc" secondAttribute="trailing" constant="50" id="lbp-Fy-4Dz"/>
+                                    <constraint firstItem="i5S-fu-LEi" firstAttribute="top" secondItem="pGD-Eq-ppo" secondAttribute="bottom" constant="40" id="nfv-XA-CCo"/>
+                                    <constraint firstItem="lz0-iP-VT4" firstAttribute="centerX" secondItem="Tvu-32-z6p" secondAttribute="centerX" id="o7e-22-mmk"/>
+                                    <constraint firstAttribute="trailing" secondItem="24N-a1-lGm" secondAttribute="trailing" constant="50" id="oXV-JY-JSR"/>
+                                    <constraint firstItem="hcQ-yL-aQc" firstAttribute="top" secondItem="i5S-fu-LEi" secondAttribute="bottom" constant="15" id="pwN-R9-b8R"/>
+                                    <constraint firstItem="rNc-1X-z1A" firstAttribute="top" secondItem="24N-a1-lGm" secondAttribute="bottom" constant="20" id="sAo-vn-RI8"/>
+                                    <constraint firstItem="sQ9-yp-n68" firstAttribute="top" secondItem="rNc-1X-z1A" secondAttribute="bottom" constant="15" id="tGe-9d-UDq"/>
+                                    <constraint firstItem="lz0-iP-VT4" firstAttribute="top" secondItem="hcQ-yL-aQc" secondAttribute="bottom" constant="15" id="uCl-Tv-SoG"/>
+                                    <constraint firstAttribute="trailing" secondItem="vEV-rX-EbI" secondAttribute="trailing" constant="50" id="wcc-fK-5y6"/>
+                                    <constraint firstAttribute="trailing" secondItem="lz0-iP-VT4" secondAttribute="trailing" constant="50" id="wn1-P7-S6o"/>
+                                    <constraint firstItem="sQ9-yp-n68" firstAttribute="centerX" secondItem="Tvu-32-z6p" secondAttribute="centerX" id="yb0-ZH-8cu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNc-1X-z1A" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="167" y="566" width="80" height="30"/>
-                                <color key="backgroundColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="DBI-Ol-nzG"/>
-                                </constraints>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addSales:" destination="AJH-bP-uhb" eventType="touchUpInside" id="GOa-ji-UB6"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Unit Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24N-a1-lGm" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="527" width="314" height="24"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sQ9-yp-n68">
-                                <rect key="frame" x="197" y="604" width="20" height="20"/>
-                            </activityIndicatorView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vEV-rX-EbI" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" constant="50" id="7Ii-mZ-oCE"/>
-                            <constraint firstItem="pGD-Eq-ppo" firstAttribute="centerX" secondItem="Fg4-K4-99O" secondAttribute="centerX" id="7fG-X9-dtx"/>
-                            <constraint firstItem="rNc-1X-z1A" firstAttribute="top" secondItem="24N-a1-lGm" secondAttribute="bottom" constant="15" id="84S-D8-jgi"/>
-                            <constraint firstItem="sQ9-yp-n68" firstAttribute="centerX" secondItem="Fg4-K4-99O" secondAttribute="centerX" id="9fm-i1-Zbs"/>
-                            <constraint firstItem="hcQ-yL-aQc" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" constant="50" id="AvU-9H-FZ2"/>
-                            <constraint firstItem="sQ9-yp-n68" firstAttribute="top" secondItem="rNc-1X-z1A" secondAttribute="bottom" constant="8" id="CJa-WN-WCs"/>
-                            <constraint firstItem="lz0-iP-VT4" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" constant="50" id="DkK-jG-JoK"/>
-                            <constraint firstItem="Fg4-K4-99O" firstAttribute="trailing" secondItem="i5S-fu-LEi" secondAttribute="trailing" constant="50" id="En1-0m-puX"/>
-                            <constraint firstItem="hcQ-yL-aQc" firstAttribute="top" secondItem="i5S-fu-LEi" secondAttribute="bottom" constant="8" id="G1V-Kg-djq"/>
-                            <constraint firstItem="hcQ-yL-aQc" firstAttribute="centerX" secondItem="Fg4-K4-99O" secondAttribute="centerX" id="H3p-Zb-gTB"/>
-                            <constraint firstItem="Fg4-K4-99O" firstAttribute="trailing" secondItem="hcQ-yL-aQc" secondAttribute="trailing" constant="50" id="Ik3-tY-37i"/>
-                            <constraint firstItem="lz0-iP-VT4" firstAttribute="centerX" secondItem="Fg4-K4-99O" secondAttribute="centerX" id="OKK-Sa-HUi"/>
-                            <constraint firstItem="24N-a1-lGm" firstAttribute="top" secondItem="vEV-rX-EbI" secondAttribute="bottom" constant="8" id="Q48-xZ-PKP"/>
-                            <constraint firstItem="Fg4-K4-99O" firstAttribute="trailing" secondItem="vEV-rX-EbI" secondAttribute="trailing" constant="50" id="ZgG-Mz-0YX"/>
-                            <constraint firstItem="Fg4-K4-99O" firstAttribute="trailing" secondItem="24N-a1-lGm" secondAttribute="trailing" constant="50" id="a0s-EZ-j8P"/>
-                            <constraint firstItem="lz0-iP-VT4" firstAttribute="centerY" secondItem="Fg4-K4-99O" secondAttribute="centerY" id="bR2-kt-gO6"/>
-                            <constraint firstItem="rNc-1X-z1A" firstAttribute="centerX" secondItem="Fg4-K4-99O" secondAttribute="centerX" id="djP-bR-1xs"/>
-                            <constraint firstItem="24N-a1-lGm" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" constant="50" id="emi-zs-XbM"/>
-                            <constraint firstItem="Fg4-K4-99O" firstAttribute="trailing" secondItem="lz0-iP-VT4" secondAttribute="trailing" constant="50" id="gdR-Bh-K9U"/>
-                            <constraint firstItem="i5S-fu-LEi" firstAttribute="top" secondItem="pGD-Eq-ppo" secondAttribute="bottom" constant="80" id="rRf-I5-4TJ"/>
-                            <constraint firstItem="lz0-iP-VT4" firstAttribute="top" secondItem="hcQ-yL-aQc" secondAttribute="bottom" constant="8" id="scb-NA-ib7"/>
-                            <constraint firstItem="i5S-fu-LEi" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" constant="50" id="wvR-sZ-t3U"/>
-                            <constraint firstItem="vEV-rX-EbI" firstAttribute="top" secondItem="lz0-iP-VT4" secondAttribute="bottom" constant="8" id="xRQ-nw-BlK"/>
+                            <constraint firstItem="Tvu-32-z6p" firstAttribute="bottom" secondItem="Fg4-K4-99O" secondAttribute="bottom" id="BFt-rm-ctt"/>
+                            <constraint firstItem="Tvu-32-z6p" firstAttribute="trailing" secondItem="Fg4-K4-99O" secondAttribute="trailing" id="Wdh-Y4-Urm"/>
+                            <constraint firstItem="Tvu-32-z6p" firstAttribute="leading" secondItem="Fg4-K4-99O" secondAttribute="leading" id="gbk-Rr-E8r"/>
+                            <constraint firstItem="Tvu-32-z6p" firstAttribute="top" secondItem="Fg4-K4-99O" secondAttribute="top" id="q9E-iH-n0V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fg4-K4-99O"/>
                     </view>
@@ -1179,9 +1224,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocs-7S-xVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119" y="195"/>
+            <point key="canvasLocation" x="119" y="250"/>
         </scene>
-        <!--View Store View Controller-->
+        <!--Stores-->
         <scene sceneID="ErL-Xe-Gdo">
             <objects>
                 <viewController id="9kr-SN-XAN" customClass="ViewStoreViewController" customModule="Inventry_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -1252,7 +1297,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XM8-qe-r4I"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b3a-5r-2El">
+                    <navigationItem key="navigationItem" title="Stores" id="b3a-5r-2El">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="H07-x7-roy">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -1264,7 +1309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqV-Lx-Xng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="989"/>
+            <point key="canvasLocation" x="119" y="988"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GNP-2R-AJM">
@@ -1318,7 +1363,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deE-9B-Vjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-710" y="195"/>
+            <point key="canvasLocation" x="-710" y="250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mb4-51-lPv">
@@ -1336,7 +1381,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNj-hf-0fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="989"/>
+            <point key="canvasLocation" x="-710" y="988"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mcg-Mn-Nmf">
@@ -1354,7 +1399,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYS-Ob-IgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2273" y="989"/>
+            <point key="canvasLocation" x="-3043" y="988"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Di2-53-EW8">
@@ -1364,76 +1409,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-Wt-pWs" customClass="textFieldDesign" customModule="Inventry_Manager">
-                                <rect key="frame" x="50" y="424" width="314" height="24"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-5s-3cV" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="167" y="512" width="80" height="30"/>
-                                <color key="backgroundColor" red="0.17306405305862427" green="0.73874211311340332" blue="0.82913511991500854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODR-ap-GmL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INVENTORY MANAGER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAO-7E-iaU">
+                                        <rect key="frame" x="77" y="259" width="260" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-Wt-pWs" customClass="textFieldDesign" customModule="Inventry_Manager">
+                                        <rect key="frame" x="50" y="336" width="314" height="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L33-wW-gnD" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="375" width="314" height="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-5s-3cV" customClass="ButtonDesign" customModule="Inventry_Manager" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="419" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.17306405305862427" green="0.73874211311340332" blue="0.82913511991500854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="deK-HP-TVf"/>
+                                        </constraints>
+                                        <state key="normal" title="LOGIN">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInPress:" destination="dG7-1c-3XL" eventType="touchUpInside" id="CC4-7b-7mq"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ce6-iN-qah">
+                                        <rect key="frame" x="197" y="457" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-Qa-dxh">
+                                        <rect key="frame" x="117.5" y="577" width="179" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-7I-N0x">
+                                        <rect key="frame" x="181" y="602" width="52" height="30"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="GUa-bX-ElD" kind="show" id="PJX-AT-1qg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="deK-HP-TVf"/>
+                                    <constraint firstItem="7mb-7I-N0x" firstAttribute="top" secondItem="Ddk-Qa-dxh" secondAttribute="bottom" constant="4" id="4Pl-ao-QJa"/>
+                                    <constraint firstItem="Ce6-iN-qah" firstAttribute="top" secondItem="mXA-5s-3cV" secondAttribute="bottom" constant="8" id="83n-fD-RTg"/>
+                                    <constraint firstItem="kAO-7E-iaU" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="DFT-Pj-HKf"/>
+                                    <constraint firstItem="Ddk-Qa-dxh" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="Ex7-f7-3Xo"/>
+                                    <constraint firstItem="L33-wW-gnD" firstAttribute="top" secondItem="JgO-Wt-pWs" secondAttribute="bottom" constant="15" id="RPH-p9-2bF"/>
+                                    <constraint firstAttribute="trailing" secondItem="L33-wW-gnD" secondAttribute="trailing" constant="50" id="Tsx-XV-RyT"/>
+                                    <constraint firstItem="L33-wW-gnD" firstAttribute="leading" secondItem="ODR-ap-GmL" secondAttribute="leading" constant="50" id="Ung-l1-um8"/>
+                                    <constraint firstItem="7mb-7I-N0x" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="YeE-mf-ocU"/>
+                                    <constraint firstItem="L33-wW-gnD" firstAttribute="centerY" secondItem="ODR-ap-GmL" secondAttribute="centerY" id="bL1-jk-Csc"/>
+                                    <constraint firstItem="L33-wW-gnD" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="bgk-Lh-Djs"/>
+                                    <constraint firstItem="kAO-7E-iaU" firstAttribute="centerX" secondItem="JgO-Wt-pWs" secondAttribute="centerX" id="cig-fI-3PC"/>
+                                    <constraint firstItem="mXA-5s-3cV" firstAttribute="top" secondItem="L33-wW-gnD" secondAttribute="bottom" constant="20" id="eLI-YA-fVY"/>
+                                    <constraint firstAttribute="bottom" secondItem="7mb-7I-N0x" secondAttribute="bottom" constant="20" id="jbA-18-S9O"/>
+                                    <constraint firstItem="mXA-5s-3cV" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="k8T-YO-P1T"/>
+                                    <constraint firstItem="Ddk-Qa-dxh" firstAttribute="top" secondItem="Ce6-iN-qah" secondAttribute="bottom" constant="100" id="lFs-OR-ryP"/>
+                                    <constraint firstItem="JgO-Wt-pWs" firstAttribute="leading" secondItem="ODR-ap-GmL" secondAttribute="leading" constant="50" id="mmO-Ck-95O"/>
+                                    <constraint firstAttribute="trailing" secondItem="JgO-Wt-pWs" secondAttribute="trailing" constant="50" id="n5E-BI-WiB"/>
+                                    <constraint firstItem="Ce6-iN-qah" firstAttribute="centerX" secondItem="ODR-ap-GmL" secondAttribute="centerX" id="x3R-65-yLh"/>
+                                    <constraint firstItem="JgO-Wt-pWs" firstAttribute="top" secondItem="kAO-7E-iaU" secondAttribute="bottom" constant="40" id="x7c-VL-X3D"/>
                                 </constraints>
-                                <state key="normal" title="LOGIN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInPress:" destination="dG7-1c-3XL" eventType="touchUpInside" id="CC4-7b-7mq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INVENTORY MANAGER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAO-7E-iaU">
-                                <rect key="frame" x="30" y="282" width="354" height="37"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-Qa-dxh">
-                                <rect key="frame" x="117.5" y="761" width="179" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-7I-N0x">
-                                <rect key="frame" x="181" y="786" width="52" height="30"/>
-                                <state key="normal" title="Sign up">
-                                    <color key="titleColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GUa-bX-ElD" kind="show" id="PJX-AT-1qg"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ce6-iN-qah">
-                                <rect key="frame" x="197" y="550" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L33-wW-gnD" customClass="textFieldDesign" customModule="Inventry_Manager" customModuleProvider="target">
-                                <rect key="frame" x="50" y="463" width="314" height="24"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JgO-Wt-pWs" firstAttribute="top" secondItem="kAO-7E-iaU" secondAttribute="bottom" constant="105" id="2Nn-tH-RuA"/>
-                            <constraint firstItem="7mb-7I-N0x" firstAttribute="centerX" secondItem="XpW-pj-Qgx" secondAttribute="centerX" id="97Y-WR-72F"/>
-                            <constraint firstItem="JgO-Wt-pWs" firstAttribute="leading" secondItem="XpW-pj-Qgx" secondAttribute="leading" constant="50" id="9Fx-dH-ZeZ"/>
-                            <constraint firstItem="kAO-7E-iaU" firstAttribute="leading" secondItem="XpW-pj-Qgx" secondAttribute="leading" constant="30" id="BzX-on-Z5l"/>
-                            <constraint firstItem="kAO-7E-iaU" firstAttribute="centerX" secondItem="XpW-pj-Qgx" secondAttribute="centerX" id="Cgn-qe-nuc"/>
-                            <constraint firstItem="L33-wW-gnD" firstAttribute="leading" secondItem="XpW-pj-Qgx" secondAttribute="leading" constant="50" id="OqK-2C-1rZ"/>
-                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="trailing" secondItem="kAO-7E-iaU" secondAttribute="trailing" constant="30" id="WJw-El-4Ok"/>
-                            <constraint firstItem="mXA-5s-3cV" firstAttribute="centerX" secondItem="XpW-pj-Qgx" secondAttribute="centerX" id="YTF-uo-s6w"/>
-                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="trailing" secondItem="L33-wW-gnD" secondAttribute="trailing" constant="50" id="ZOK-zs-Zx0"/>
-                            <constraint firstItem="L33-wW-gnD" firstAttribute="centerY" secondItem="XpW-pj-Qgx" secondAttribute="centerY" id="ZgM-Rj-Xbf"/>
-                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="bottom" secondItem="Ddk-Qa-dxh" secondAttribute="bottom" constant="80" id="c8G-5C-8OX"/>
-                            <constraint firstItem="Ddk-Qa-dxh" firstAttribute="centerX" secondItem="XpW-pj-Qgx" secondAttribute="centerX" id="enC-XX-1lD"/>
-                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="trailing" secondItem="JgO-Wt-pWs" secondAttribute="trailing" constant="50" id="gZL-yv-3Zy"/>
-                            <constraint firstItem="7mb-7I-N0x" firstAttribute="top" secondItem="Ddk-Qa-dxh" secondAttribute="bottom" constant="4" id="l8W-fu-v8u"/>
-                            <constraint firstItem="L33-wW-gnD" firstAttribute="top" secondItem="JgO-Wt-pWs" secondAttribute="bottom" constant="15" id="mzN-w3-Jsv"/>
-                            <constraint firstItem="Ce6-iN-qah" firstAttribute="centerX" secondItem="XpW-pj-Qgx" secondAttribute="centerX" id="oVB-J7-zRX"/>
-                            <constraint firstItem="mXA-5s-3cV" firstAttribute="top" secondItem="L33-wW-gnD" secondAttribute="bottom" constant="25" id="pEP-sw-Da4"/>
-                            <constraint firstItem="Ce6-iN-qah" firstAttribute="top" secondItem="mXA-5s-3cV" secondAttribute="bottom" constant="8" id="sz2-01-5tr"/>
+                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="bottom" secondItem="ODR-ap-GmL" secondAttribute="bottom" id="OpI-Me-tDR"/>
+                            <constraint firstItem="XpW-pj-Qgx" firstAttribute="trailing" secondItem="ODR-ap-GmL" secondAttribute="trailing" id="bgE-U2-dTe"/>
+                            <constraint firstItem="ODR-ap-GmL" firstAttribute="leading" secondItem="XpW-pj-Qgx" secondAttribute="leading" id="sY7-mx-rdo"/>
+                            <constraint firstItem="ODR-ap-GmL" firstAttribute="top" secondItem="XpW-pj-Qgx" secondAttribute="top" id="v0v-ki-SWP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XpW-pj-Qgx"/>
                     </view>
@@ -1484,6 +1541,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jVv-Ie-mSV"/>
-        <segue reference="YVd-jG-iAS"/>
+        <segue reference="h0r-dN-My9"/>
     </inferredMetricsTieBreakers>
 </document>

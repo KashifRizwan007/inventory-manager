@@ -30,7 +30,7 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewStockTableView.tableFooterView = UIView()
+        self.viewStockTableView.tableFooterView = nil
         self.slideMenu()
         self.loadData()
         viewStockTableView.rowHeight = UITableView.automaticDimension
