@@ -29,8 +29,8 @@ class ViewStockViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.viewStockTableView.tableFooterView = nil
+        viewStockTableView.layoutMargins = UIEdgeInsets.zero
+        viewStockTableView.separatorInset = UIEdgeInsets.zero
         self.slideMenu()
         self.loadData()
         viewStockTableView.rowHeight = UITableView.automaticDimension
@@ -100,6 +100,7 @@ extension ViewStockViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! ViewStockTableViewCell
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.name.text = data[indexPath.row].name
         return cell
     }
@@ -123,7 +124,7 @@ extension ViewStockViewController{
         var numOfSection: NSInteger = 0
         
         if self.data != nil {
-            self.viewStockTableView.tableFooterView = nil
+            self.viewStockTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
             

@@ -23,7 +23,8 @@ class ViewSalesViewController: UIViewController,UITableViewDelegate,UITableViewD
         super.viewDidLoad()
         self.slideMenu()
         self._loadData()
-        self.viewSalesTableView.tableFooterView = UIView()
+        viewSalesTableView.layoutMargins = UIEdgeInsets.zero
+        viewSalesTableView.separatorInset = UIEdgeInsets.zero
         viewSalesTableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(_loadData), for: .valueChanged)
     }
@@ -64,6 +65,7 @@ extension ViewSalesViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "salesRecordCell") as! SalesDetailTableViewCell
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.productName.text = self.salesData[indexPath.row].productName
         cell.storeName.text = self.salesData[indexPath.row].storeName
         cell.productName.text = self.salesData[indexPath.row].productName
@@ -81,7 +83,7 @@ extension ViewSalesViewController{
         var numOfSection: NSInteger = 0
         
         if self.salesData != nil {
-            self.viewSalesTableView.tableFooterView = nil
+            self.viewSalesTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
             

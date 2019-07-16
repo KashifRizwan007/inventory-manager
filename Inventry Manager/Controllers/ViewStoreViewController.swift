@@ -22,7 +22,8 @@ class ViewStoreViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewStoreTableView.tableFooterView = UIView()
+        viewStoreTableView.layoutMargins = UIEdgeInsets.zero
+        viewStoreTableView.separatorInset = UIEdgeInsets.zero
         self.slideMenu()
         self._loadData()
         viewStoreTableView.refreshControl = self.refreshControl
@@ -81,6 +82,7 @@ extension ViewStoreViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "storeCell") as! StoreTableViewCell
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.storeName.text = self.storeData[indexPath.row].storeName
         cell.StoreLocation.text = self.storeData[indexPath.row].location
         return cell
@@ -94,7 +96,7 @@ extension ViewStoreViewController{
         var numOfSection: NSInteger = 0
         
         if self.storeData != nil {
-            self.viewStoreTableView.tableFooterView = nil
+            self.viewStoreTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
             

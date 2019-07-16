@@ -416,6 +416,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GJd-gp-Y7K" secondAttribute="trailing" id="zN1-hL-5w8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.51143315613768814" green="0.96060330663035876" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="date" destination="FBV-O5-8Em" id="GbQ-0n-ma4"/>
                                             <outlet property="productName" destination="GJd-gp-Y7K" id="oUV-ff-Xux"/>
