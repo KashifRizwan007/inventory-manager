@@ -47,6 +47,7 @@
 		1276421C22C3B2070085B177 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276421B22C3B2070085B177 /* TableViewController.swift */; };
 		12D5973322CDE31700D42BB1 /* DeleteProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5973222CDE31700D42BB1 /* DeleteProduct.swift */; };
 		12D5973522CE0E2900D42BB1 /* editProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5973422CE0E2900D42BB1 /* editProduct.swift */; };
+		12E7A3FA22E050AE00B2D704 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12E7A3F922E050AD00B2D704 /* background.jpeg */; };
 		12E9491222C5ED5A008E7870 /* ButtonDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9491122C5ED5A008E7870 /* ButtonDesign.swift */; };
 		12E9491422C5FC0A008E7870 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9491322C5FC0A008E7870 /* SignUpViewController.swift */; };
 		5FF5836340903B6946DB82CB /* Pods_Inventry_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F61B4CC6C27EE89184C75DE /* Pods_Inventry_Manager.framework */; };
@@ -98,6 +99,7 @@
 		1276421B22C3B2070085B177 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../Controllers/TableViewController.swift; sourceTree = "<group>"; };
 		12D5973222CDE31700D42BB1 /* DeleteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProduct.swift; sourceTree = "<group>"; };
 		12D5973422CE0E2900D42BB1 /* editProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProduct.swift; sourceTree = "<group>"; };
+		12E7A3F922E050AD00B2D704 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 		12E9491122C5ED5A008E7870 /* ButtonDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
 		12E9491322C5FC0A008E7870 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6F1057D39BC29F231E2F25F0 /* Pods-Inventry Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inventry Manager.release.xcconfig"; path = "Target Support Files/Pods-Inventry Manager/Pods-Inventry Manager.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				1237823222CF371200DF8071 /* Networking */,
 				12E9491522C5FC32008E7870 /* Supporting Libraries */,
 				1276420622C38CCC0085B177 /* Assets.xcassets */,
+				12E7A3F922E050AD00B2D704 /* background.jpeg */,
 				120838DE22CA268D007BF417 /* img.png */,
 				1276420B22C38CCC0085B177 /* Info.plist */,
 			);
@@ -308,6 +311,7 @@
 				1276420A22C38CCC0085B177 /* LaunchScreen.storyboard in Resources */,
 				1276420722C38CCC0085B177 /* Assets.xcassets in Resources */,
 				1276420522C38CCB0085B177 /* Main.storyboard in Resources */,
+				12E7A3FA22E050AE00B2D704 /* background.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
